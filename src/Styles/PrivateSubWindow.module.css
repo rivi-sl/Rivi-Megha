@@ -1,0 +1,133 @@
+.privateContactList{
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+    /* background-color: #212327; */
+}
+
+.contactList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact{
+    margin: 2% 0 2% 0;
+    width: 95%;
+    height: 15%;
+    min-height: 70px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contact_selected{
+    margin: 2% 0 2% 0;
+    border-radius: 0.5em 0 0 0.5em;
+    width: 100%;
+    height: 15%;
+    min-height: 70px;
+    display: flex;
+    background-color: #e8e8e8;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.privateContactList::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.privateContactList::-webkit-scrollbar-thumb {
+    background-color: #DE4B1E;
+}
+
+.contactShortInfo{
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.contactProfilePicture{
+    border-radius: 3em;
+    height: 50px;
+    max-height: 50px;
+    width: auto;
+    margin: 0.5em;
+}
+
+.contactProfilePicture_online{
+    border-radius: 3em;
+    height: 50px;
+    max-height: 50px;
+    width: auto;
+    margin: 0.5em;
+    border: 3px solid #57CD44;
+}
+
+
+.contactNameandSMS{
+    width: 60%;
+    height: 70px;
+    padding: 0.5rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactName{
+    color: #3E4445;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.contactSMS{
+    margin-top: -0.2rem;
+    color: #3E4445;
+    font-weight: 300;
+    font-size: 0.75em;
+}
+
+.timeStamp{
+    color: #3E4445;
+    font-weight: 400;
+    font-size: 0.7em;
+    align-self: flex-start;
+    margin-top: 1em;
+}
+
+.unreadNotifications{
+    font-size: 0.7em;
+    /* padding: 7.5px; */
+    font-weight: 400;
+    position: absolute;
+    background-color: #DE4B1E;
+    color: #f7f7f7;
+    clip-path: circle(50%);
+    right: 0;
+    bottom: 10px;
+    min-width: 20px;
+    min-height: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.unreadNotifications_selected{
+    font-size: 0.7em;
+    /* padding: 7.5px; */
+    min-width: 20px;
+    min-height: 20px;
+    font-weight: 400;
+    position: absolute;
+    background-color: #DE4B1E;
+    color: #f7f7f7;
+    clip-path: circle(50%);
+    right: 10px;
+    bottom: 10px;
+    display: grid;
+    place-items: center;
+}

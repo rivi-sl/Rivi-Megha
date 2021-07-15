@@ -1,0 +1,20 @@
+.icon{
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+}
+
+.icon_selected,.icon:hover{
+    background-color: #f8846085;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 0.5em;
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+}

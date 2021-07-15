@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Navigation from './Layout/Navigation'
+import NavigationSubWindow from './Layout/NavigationSubWindows/NavigationSubWindow'
+import PrivateSubWindow from './Pages/SubWindows/PrivateSubWindow'
+import MainWindow from './Layout/MainWindow'
+import PrivateChat from './Pages/MainWindows/PrivateChat'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <section className="Appbar">
+          <Navigation />
+          <NavigationSubWindow>
+            <PrivateSubWindow />
+          </NavigationSubWindow>
+        </section>
+        <section className="Appbody">
+          <MainWindow>
+            <PrivateChat />
+          </MainWindow>
+        </section>
     </div>
   );
-}
+} 
 
 export default App;

@@ -1,0 +1,77 @@
+.header{
+    width: 100%;
+    height: 12.5%;
+    background-color: #F1F1F1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 2% 0 2%;
+}
+
+.contactProfilePicture{
+    border-radius: 3em;
+    height: 55px;
+    max-height: 55px;
+    width: auto;
+    margin: 0.5em;
+}
+
+.contactProfilePicture_online{
+    border-radius: 3em;
+    height: 55px;
+    max-height: 55px;
+    width: auto;
+    margin: 0.5em;
+    border: 3px solid #57CD44;
+}
+
+.contactInfo{
+    flex: 1;
+    height: 100%;
+    /* background-color: #212327; */
+    display: flex;
+    flex-direction: column;
+    padding: 0 1% 0 1%;
+    justify-content: center;
+}
+
+.contactActions{
+    width: 15%;
+    height: 100%;
+    /* background-color: black; */
+}
+
+.name{
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.about{
+    font-weight: 300;
+    font-size: 0.65em;
+}
+
+.state{
+    font-weight: 500;
+    font-size: 0.7em; 
+}
+
+.chatWindow{
+    width: 100%;
+    flex: 1;
+    /* background-color: #212327; */
+}
+
+.sendArea{
+    width: 100%;
+    height: 10%;
+    display: grid;
+    place-items: center;
+}
+
+.sendBox{
+    width: 95%;
+    height: 60%;
+    border: 1.5px solid #3E4445;
+    border-radius: 3em;
+}
