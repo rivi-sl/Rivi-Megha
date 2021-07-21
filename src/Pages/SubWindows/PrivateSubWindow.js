@@ -23,7 +23,9 @@ const PrivateSubWindow = () => {
             :
             <PrivateContactListOnline chatData={chatData} />
         }
-            
+            <div className={styles.newChatButton}>
+                <Rivicon i='NewChatIcon' s='22' mt={0} nav={false} selected={false} /> 
+            </div>
         </React.Fragment>
     )
 }

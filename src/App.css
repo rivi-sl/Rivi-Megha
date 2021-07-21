@@ -1,12 +1,13 @@
 /* Import All Fonts Here */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 *{
   box-sizing: border-box;
   font-family: 'Poppins';
   /* font-family: 'Archivo', sans-serif; */
+  /* font-family: 'DM Sans', sans-serif; */
   color: #222222;
   /* overflow: hidden; */
 }
@@ -43,12 +44,13 @@ html,body,#root{
   flex-direction: row;
   justify-content: space-between;
   min-width: 360px;
+  border-right: 1px solid rgba(62, 68, 69, 0.1);
 }
 
 .Appbody{
   flex: 1;
   height: 100%;
-  background-color: #fff;
+  background-color: #f8f8f8;
   border-radius: 0 1em 1em 0;
   overflow: hidden;
   position: relative;

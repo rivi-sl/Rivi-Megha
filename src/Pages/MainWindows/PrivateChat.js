@@ -1,19 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as styles from './MainWindowStyles/PrivateChat.module.css'
 import Header from '../../Components/MainWindowComponents/Private/Header'
 import SendArea from '../../Components/MainWindowComponents/Private/SendArea'
+import PrivateChatComponent from '../../Components/MainWindowComponents/Private/PrivateChatComponent'
+import ProfileInfo from '../../Components/MainWindowComponents/Private/ProfileInfo'
+import dummyMessages from './dummyConvo.js'
+import dummyProfile from './dummyProfileInfo.js'
+import PrivateImageViewer from './PrivateChatImageViewer.Context'
+import ImageViewer from '../../Components/MainWindowComponents/Private/ImageViewer'
 
 const PrivateChat = () => {
+
+    const [active, setActive] = useState(false)
+    const [imageUrl, setImageUrl] = useState('')
+
+    const handleToggleProfile = () => {
+        const profileInfoSection = document.getElementById("profileInfoSection")
+        profileInfoSection.style.display = "flex"
+    }
+
+    const imageProvider = { active, setActive, imageUrl, setImageUrl}
+
     return (
-        <React.Fragment>
-            <div className={styles.header}>
-                <Header profilePic={'https://avatars.githubusercontent.com/u/41909955?v=4'} name={'Chamindu Amarasinghe'} online={true} about={'Never forget who you are, because the rest of the world will never know'} />
+        <PrivateImageViewer.Provider value={imageProvider}>
+            <div className={styles.privateImageViewer} style={active?{display:'unset'}:{display:'none'}}>
+                <ImageViewer image={imageUrl} />
             </div>
-            <div className={styles.chatWindow}></div>
-            <div className={styles.sendArea}>
-            <SendArea />
+        <div className={styles.privateChatMain} id="privateChatMain">
+            <ProfileInfo profileInfo={dummyProfile} />
+            <div className={styles.chatWindowPanel} id="chatWindowPanel">
+                <div className={styles.header} onClick={()=>{handleToggleProfile()}}>
+                    <Header profilePic={dummyProfile.profilePic} name={dummyProfile.name} online={dummyProfile.online} about={dummyProfile.about} />
+                </div>
+                <div className={styles.chatWindow} id="chatWindow">
+                    <PrivateChatComponent messages={dummyMessages} />
+                </div>
+                <div className={styles.sendArea} onClick={()=>{console.log(`Active: ${active}; Image: '${imageUrl}'`)}}>
+                <SendArea />
+                </div>
             </div>
-        </React.Fragment>
+        </div>
+        </PrivateImageViewer.Provider>
     )
 }
 

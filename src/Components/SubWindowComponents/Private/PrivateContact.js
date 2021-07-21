@@ -13,7 +13,7 @@ const PrivateContact = (props) => {
             <span className={styles.timeStamp}>{timeStamp}</span>
             {unread>0
             ?
-            <span className={selected ? styles.unreadNotifications_selected : styles.unreadNotifications}>{unread}</span>
+            <span className={styles.unreadNotifications}>{unread}</span>
             :
             null
             }

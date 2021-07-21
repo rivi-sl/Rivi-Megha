@@ -11,11 +11,11 @@ const chatData = [
     },
     {
         id:1,
-        name: 'Chamindu',
-        profilePic: 'https://avatars.githubusercontent.com/u/41909955?v=4',
+        name: 'Aditha',
+        profilePic: 'https://i.ibb.co/RHZkLvc/pp.jpg',
         timeStamp: '1hour',
         lastSMS: 'minim veniam, quis nostrud exercitation',
-        online: false,
+        online: true,
         unreadMessages: 0
     },
     {
