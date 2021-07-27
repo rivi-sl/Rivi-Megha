@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
 import moment from "moment"
-import { parser } from 'html-metadata-parser'
+const urlMetadata = require('url-metadata')
 
 export const ChatOut = (props) => {
     const {message,lastUser,timeStamp} = props
@@ -10,10 +10,13 @@ export const ChatOut = (props) => {
         if(urlCheckerRegexExpression.test(message_string)){
             var match = message_string.match(urlCheckerRegexExpression)
             console.log(match[0]);
-            (async () => {
-                var result = await parser('https://www.youtube.com/watch?v=eSzNNYk7nVU');
-                console.log(JSON.stringify(result, null, 3));
-            })();
+            urlMetadata('https://github.com/laurengarcia/url-metadata#readme').then(
+  function (metadata) { // success handler
+    console.log(metadata)
+  },
+  function (error) { // failure handler
+    console.log(error)
+  })
             return true
         }
         else{
