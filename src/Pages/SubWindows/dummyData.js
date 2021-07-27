@@ -12,7 +12,7 @@ const chatData = [
     {
         id:1,
         name: 'Aditha',
-        profilePic: 'https://i.ibb.co/RHZkLvc/pp.jpg',
+        profilePic: 'https://avatars.githubusercontent.com/u/41909955?v=4',
         timeStamp: '1hour',
         lastSMS: 'minim veniam, quis nostrud exercitation',
         online: true,

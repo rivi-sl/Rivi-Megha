@@ -25,10 +25,11 @@ export const ProfileInfo = (props) => {
                         <div className={styles.profileInfoPhotoBox}
                             onClick={() => {
                                 setActive(true)
-                                setImageUrl(photo)
+                                setImageUrl(photo.imageId)
                             }}
+                            style={{backgroundImage:`url('${photo.photoLink}')`}}
+                            data-id={photo.imageId}
                         >
-                            <img src={photo} data-link={photo} alt={`Image send by - ${profileInfo.name}`} />
                             <div className={styles.openPhotoIcon}>
                             <Rivicon i='CameraIcon' s='22' mt={0} nav={false} pl={10} pr={10} selected={false} style={{opacity:0.5,filter:'blur(0.5px)'}} />
                             </div>

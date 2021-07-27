@@ -20,11 +20,11 @@ const PrivateChat = () => {
     }
 
     const imageProvider = { active, setActive, imageUrl, setImageUrl}
-
+    // console.log(dummyProfile.photos)
     return (
         <PrivateImageViewer.Provider value={imageProvider}>
             <div className={styles.privateImageViewer} style={active?{display:'unset'}:{display:'none'}}>
-                <ImageViewer image={imageUrl} />
+                <ImageViewer image={imageUrl} photoSet={dummyProfile.photos} />
             </div>
         <div className={styles.privateChatMain} id="privateChatMain">
             <ProfileInfo profileInfo={dummyProfile} />
@@ -35,7 +35,7 @@ const PrivateChat = () => {
                 <div className={styles.chatWindow} id="chatWindow">
                     <PrivateChatComponent messages={dummyMessages} />
                 </div>
-                <div className={styles.sendArea} onClick={()=>{console.log(`Active: ${active}; Image: '${imageUrl}'`)}}>
+                <div className={styles.sendArea}>
                 <SendArea />
                 </div>
             </div>

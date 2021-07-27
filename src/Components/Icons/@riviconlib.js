@@ -16,6 +16,10 @@ import ChevronRight from './Icons/ChevronRight.svg'
 import ChevronLeft from './Icons/ChevronLeft.svg'
 import Camera from './Icons/Camera.svg'
 import Close from './Icons/Close.svg'
+import Photo from './Icons/Photo.svg'
+import Document from './Icons/Document.svg'
+import Play from './Icons/Play.svg'
+import Pause from './Icons/Pause.svg'
 
 const IconExplorer = (s,i,style) =>{
     const IconLibrary = {
@@ -36,6 +40,10 @@ const IconExplorer = (s,i,style) =>{
         ChevronLeftIcon : <img src={ChevronLeft} style={style?style:null} width={s} alt='Rivicon-ChevronLeft' />,
         CameraIcon : <img src={Camera} style={style?style:null} width={s} alt='Rivicon-Camera' />,
         CloseIcon : <img src={Close} style={style?style:null} width={s} alt='Rivicon-Close' />,
+        PhotoIcon : <img src={Photo} style={style?style:null} width={s} alt='Rivicon-Photo' />,
+        DocumentIcon : <img src={Document} style={style?style:null} width={s} alt='Rivicon-Document' />,
+        PlayIcon : <img src={Play} style={style?style:null} width={s} alt='Rivicon-Play' />,
+        PauseIcon : <img src={Pause} style={style?style:null} width={s} alt='Rivicon-Pause' />,
     }
     return IconLibrary[i]
 }

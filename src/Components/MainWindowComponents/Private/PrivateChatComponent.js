@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
 import ChatOut from './ChatOut'
 import ChatIn from './ChatIn'
+import ImageIn from './ImageIn'
+import ImageOut from './ImageOut'
+import VoiceMessageIn from './VoiceMessageIn'
+import VoiceMessageOut from './VoiceMessageOut'
 import NewDateDivider from '../NewDateDivider'
 import Rivicon from '../../Icons/Rivicon'
 import moment from 'moment'
@@ -9,7 +13,7 @@ import moment from 'moment'
 export const PrivateChatComponent = (props) => {
     const {messages} = props
     const divRef = useRef(null);
-    const [btnVisible,setButtonVisible] = useState(true)
+    const [btnVisible,setButtonVisible] = useState(false)
     useEffect(()=>{divRef.current.scrollIntoView();},[])
     useEffect(() => {
         const chatWindow = document.getElementById('chatWindow')
@@ -34,21 +38,21 @@ export const PrivateChatComponent = (props) => {
                 lastUser = message.senderId
                 lastDate = new Date(message.timeStamp)
                 if(isNotNewDay(ld,lastDate)){
-                if(message.senderId === '0101010101'){
+                if(message.senderId === '0101010101' && message.type === 'textMessage'){
                     return <ChatOut message={message.message} lastUser={(message.senderId===lu)} timeStamp={message.timeStamp} />
-                }else{
+                }else if(message.type === 'textMessage'){
                     return <ChatIn message={message.message} lastUser={(message.senderId===lu)} timeStamp={message.timeStamp} />
                 }
                 }else{
 
-                    if(message.senderId === '0101010101'){
+                    if(message.senderId === '0101010101' && message.type === 'textMessage'){
                         return (
                         <React.Fragment>
                             <NewDateDivider date={new Date(message.timeStamp)} />
                             <ChatOut message={message.message} lastUser={(message.senderId===lu)} timeStamp={message.timeStamp} />
                         </React.Fragment>
                         )
-                    }else{
+                    }else if( message.type === 'textMessage'){
                         return (
                         <React.Fragment>
                             <NewDateDivider date={new Date(message.timeStamp)} />
@@ -58,10 +62,14 @@ export const PrivateChatComponent = (props) => {
                     }
                 }
             })}
+            <VoiceMessageIn />
+            <VoiceMessageOut />
+            <ImageIn />
+            <ImageOut />
             <div ref={divRef} />
-            <div className={styles.scrollDownButton} onClick={handleScrollToBottom} style={{opacity: btnVisible?'1':'0', transform: btnVisible? 'scale(0.9)':'scale(0.75)'}}>
+          <div className={styles.scrollDownButton} onClick={handleScrollToBottom} style={{opacity: btnVisible?'1':'0', transform: btnVisible? 'scale(0.9)':'scale(0.75)'}}>
                 <Rivicon i='ChevronDownIcon' s='15' mt={0} nav={false} pl={10} pr={10} selected={false} />
-            </div>
+            </div>  
         </React.Fragment>
     )
 }

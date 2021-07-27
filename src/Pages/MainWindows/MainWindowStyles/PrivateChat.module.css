@@ -119,7 +119,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items:center;
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: relative;
 }
 
 .inputMessage{
@@ -136,7 +137,7 @@
     place-items: center;
     width: 4em;
     min-width: 64px;
-    border-radius: 3em 0 0 3em;
+    border-radius: 3em;
 }
 
 .chatInBox{
@@ -247,7 +248,7 @@
     background-color: #DE4B1E;
     width: 3rem;
     height: 3rem;
-    top: 0.5rem;
+    top: 1.5rem;
     left: -1.5rem;
     z-index: 2;
     border-radius: 50%;
@@ -326,6 +327,9 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 /* .profileInfoPhotoBox > img{
@@ -394,12 +398,16 @@
 .imageViewer{
     width: 100%;
     height: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
 .imageViewer > img{
-    width: 75%;
+    max-width: 75%;
+    max-height: 40%;
+    /* min-width: 50%; */
+    min-height: 20%;
     height: auto;
 }
 
@@ -416,4 +424,326 @@
     place-items: center;
     transition: .25s;
     cursor: pointer;
+}
+
+.imageSlider{
+    width: 75%;
+    position: absolute;
+    height: 10%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    /* background-color: #000; */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.imageSlider > div{
+    height: 100%;
+    aspect-ratio: 1/1;
+    /* background-color: #000; */
+    margin: 0 10px 0 10px;
+    /* float: left; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.imageSlider::-webkit-scrollbar {
+    height: 5px;
+    background-color: transparent;
+}
+
+.imageSlider::-webkit-scrollbar-thumb {
+    background-color: #DE4B1E;
+}
+
+.attachButtonsWindow{
+    position: absolute;
+    width: 5%;
+    min-width: 40px;
+    max-width: 50px;
+    left: 32.5px;
+    bottom: 100%;
+    height: 300%;
+    min-height: 120px;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .25s;
+    opacity: 0;
+    transform: scale(0.75) translateY(5px);
+    justify-content: space-evenly;
+    z-index:99;
+}
+
+.attachButtonsWindowOpen{
+    position: absolute;
+    width: 5%;
+    min-width: 40px;
+    max-width: 50px;
+    left: 32.5px;
+    bottom: 100%;
+    height: 300%;
+    min-height: 120px;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .25s;
+    /* opacity: 0; */
+    /* transform: scale(0.9) translateY(5px); */
+    justify-content: space-evenly;
+    z-index:99;
+}
+
+.attachImageButton{
+    position: sticky;
+    background-color: #DE4B1E;
+    width: 100%;
+    aspect-ratio: 1/1;
+    bottom: 0.5rem;
+    float: right;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .25s;
+    cursor: pointer;
+}
+
+.attachDocumentButton{
+    position: sticky;
+    background-color: #DE4B1E;
+    width: 100%;
+    aspect-ratio: 1/1;
+    bottom: 0.5rem;
+    float: right;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .25s;
+    cursor: pointer;
+    transform: translateY(55px);
+}
+
+.attachDocumentButtonOpen{
+    position: sticky;
+    background-color: #DE4B1E;
+    width: 100%;
+    aspect-ratio: 1/1;
+    bottom: 0.5rem;
+    float: right;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .25s;
+    cursor: pointer;
+    /* transition-delay: 1s; */
+    /* transform: translateY(55px); */
+}
+
+.attachButtonWrapper{
+    position: fixed;
+    width: 100vw;
+    /* left: 32.5px; */
+    /* bottom: 100%; */
+    height: 100vh;
+    top: 0;
+    left: 0;
+    /* background-color: #000; */
+    /* z-index: -1; */
+    /* display: none; */
+    /* cursor: pointer; */
+}
+
+.audioPlayer{
+    width: 100%;
+    min-width: 200px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.audioPlayerButton{
+    height: 100%;
+    min-height:30px;
+    aspect-ratio: 1/1;
+    border-radius:50%;
+    /* border: 1px solid #3e444540; */
+    display: grid;
+    place-items: center;
+}
+
+input[type=range] {
+    height: 14px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    /* width: 50%; */
+    flex: 1;
+    padding: 0 7.5px 0 0;
+    background-color: transparent;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #AAADAD;
+    border-radius: 10px;
+    border: 0px solid #000000;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background: #AAADAD;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -2.5px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #AAADAD;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #AAADAD;
+    border-radius: 10px;
+    border: 0px solid #000000;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background: #AAADAD;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #AAADAD;
+    border: 0px solid #000000;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #AAADAD;
+    border: 0px solid #000000;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background: #AAADAD;
+    cursor: pointer;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #AAADAD;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #AAADAD;
+  }
+
+  .timeStampForVoiceMessage{
+    font-size: 0.7rem !important;
+    font-weight: 300 !important;
+    width: 20px;
+    /* align-self: flex-end; */
+}
+
+.chatInBoxImage{
+    max-width: 400px;
+    width: fit-content;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 0 0.75em 0.75em 0.75em;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatOutBoxImage{
+    right: 0;
+    position: relative;
+    margin-left: auto;
+    max-width: 400px;
+    width: fit-content;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #ffbe7b;
+    border-radius: 0.75em 0 0.75em 0.75em;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatInBoxImage > span > img,.chatOutBoxImage > span > img {
+    width: 100%;
+    max-width: 350px;
+    max-height: 400px;
+    margin: 5px 0 5px 0;
+    object-fit: cover;
+}
+
+.chatInBoxImage::after {
+    content: '';
+    position: absolute;
+    border: .5em solid transparent;
+    border-top-color: #fff;
+    border-right-color: #fff;
+    right: 100%;
+    top: 0%;
+  }
+
+.chatOutBoxImage::after {
+    content: '';
+    position: absolute;
+    border: .5em solid transparent;
+    border-top-color: #ffbe7b;
+    border-left-color: #ffbe7b;
+    left: 100%;
+    top: 0%;
+  }
+
+  .chatOutBoxImage > span, .chatInBoxImage > span{
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.metaInfoSection{
+    width:100%;
+    height:fit-content;
+    min-height: 75px;
+    background-color: rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: row;
 }
