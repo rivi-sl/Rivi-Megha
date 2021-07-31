@@ -6,7 +6,7 @@ import ImageIn from './ImageIn'
 import ImageOut from './ImageOut'
 import VoiceMessageIn from './VoiceMessageIn'
 import VoiceMessageOut from './VoiceMessageOut'
-import NewDateDivider from '../NewDateDivider'
+import NewDateDivider from './NewDateDivider'
 import Rivicon from '../../Icons/Rivicon'
 import moment from 'moment'
 
@@ -31,7 +31,10 @@ export const PrivateChatComponent = (props) => {
     var lastDate = new Date()
     return (
         <React.Fragment>
-
+            <VoiceMessageIn />
+            <VoiceMessageOut />
+            <ImageIn />
+            <ImageOut />
             {messages && messages.map((message)=>{
                 let lu = lastUser
                 let ld = lastDate
@@ -62,10 +65,6 @@ export const PrivateChatComponent = (props) => {
                     }
                 }
             })}
-            <VoiceMessageIn />
-            <VoiceMessageOut />
-            <ImageIn />
-            <ImageOut />
             <div ref={divRef} />
           <div className={styles.scrollDownButton} onClick={handleScrollToBottom} style={{opacity: btnVisible?'1':'0', transform: btnVisible? 'scale(0.9)':'scale(0.75)'}}>
                 <Rivicon i='ChevronDownIcon' s='15' mt={0} nav={false} pl={10} pr={10} selected={false} />

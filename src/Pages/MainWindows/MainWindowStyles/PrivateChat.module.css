@@ -195,6 +195,13 @@
 .chatOutBox > span, .chatInBox > span,.chatOutBoxWO > span, .chatInBoxWO > span{
     font-size: 0.75rem;
     font-weight: 400;
+    margin: 2.5px 5px 5px 5px;
+    word-break: break-word;
+    line-height: 1.5;
+    text-align: initial;
+    display: flow-root;
+    unicode-bidi: plaintext;
+    white-space: pre-wrap;
 }
 
 .chatInBox::after {
@@ -710,6 +717,7 @@ input[type=range] {
     max-height: 400px;
     margin: 5px 0 5px 0;
     object-fit: cover;
+    border-radius: 0.5em;
 }
 
 .chatInBoxImage::after {
@@ -735,15 +743,58 @@ input[type=range] {
   .chatOutBoxImage > span, .chatInBoxImage > span{
     font-size: 0.75rem;
     font-weight: 400;
+    margin: 2.5px 5px 5px 5px;
+    word-break: break-word;
+    line-height: 1.5;
+    text-align: initial;
+    display: flow-root;
+    unicode-bidi: plaintext;
 }
 
 .metaInfoSection{
     width:100%;
     height:fit-content;
     min-height: 75px;
+    max-height: 80px;
     background-color: rgba(0, 0, 0, 0.05);
     overflow: hidden;
     border-radius: 0.5em;
     display: flex;
     flex-direction: row;
+    border-left: 4px solid #DE4B1E;
+    cursor: pointer;
+}
+
+.metaInfoSection > img {
+    max-height: 85px;
+    width:auto;
+    aspect-ratio: 1/1;
+}
+.metaInfoSection div {
+    flex: 1;
+    /* max-height: 50px; */
+    padding: 5px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.metaTitle{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.metaDescription{
+    font-size: 0.75rem;
+    font-weight: 300;
+    margin: 2.5px 5px 5px 5px;
+    word-break: break-word;
+    line-height: 1.5;
+    text-align: initial;
+    display: flow-root;
+    unicode-bidi: plaintext;
+}
+
+.urlDecor{
+    color: #529ec4;
 }

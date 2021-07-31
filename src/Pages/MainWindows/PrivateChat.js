@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import * as styles from './MainWindowStyles/PrivateChat.module.css'
 import Header from '../../Components/MainWindowComponents/Private/Header'
 import SendArea from '../../Components/MainWindowComponents/Private/SendArea'
 import PrivateChatComponent from '../../Components/MainWindowComponents/Private/PrivateChatComponent'
 import ProfileInfo from '../../Components/MainWindowComponents/Private/ProfileInfo'
-import dummyMessages from './dummyConvo.js'
-import dummyProfile from './dummyProfileInfo.js'
 import PrivateImageViewer from './PrivateChatImageViewer.Context'
 import ImageViewer from '../../Components/MainWindowComponents/Private/ImageViewer'
+import Rivi from '../../Rivi.Context'
 
 const PrivateChat = () => {
 
     const [active, setActive] = useState(false)
     const [imageUrl, setImageUrl] = useState('')
+    const { selectedPrivateChat, setSelectedPrivateChat } = useContext(Rivi)
 
     const handleToggleProfile = () => {
         const profileInfoSection = document.getElementById("profileInfoSection")
@@ -24,16 +24,16 @@ const PrivateChat = () => {
     return (
         <PrivateImageViewer.Provider value={imageProvider}>
             <div className={styles.privateImageViewer} style={active?{display:'unset'}:{display:'none'}}>
-                <ImageViewer image={imageUrl} photoSet={dummyProfile.photos} />
+                <ImageViewer image={imageUrl} photoSet={selectedPrivateChat.photos} />
             </div>
         <div className={styles.privateChatMain} id="privateChatMain">
-            <ProfileInfo profileInfo={dummyProfile} />
+            <ProfileInfo profileInfo={selectedPrivateChat} />
             <div className={styles.chatWindowPanel} id="chatWindowPanel">
                 <div className={styles.header} onClick={()=>{handleToggleProfile()}}>
-                    <Header profilePic={dummyProfile.profilePic} name={dummyProfile.name} online={dummyProfile.online} about={dummyProfile.about} />
+                    <Header profilePic={selectedPrivateChat.profilePic} name={selectedPrivateChat.name} online={selectedPrivateChat.online} about={selectedPrivateChat.about} />
                 </div>
                 <div className={styles.chatWindow} id="chatWindow">
-                    <PrivateChatComponent messages={dummyMessages} />
+                    <PrivateChatComponent messages={selectedPrivateChat.conversation} />
                 </div>
                 <div className={styles.sendArea}>
                 <SendArea />
