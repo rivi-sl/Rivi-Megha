@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Rivi from './Rivi.Context'
 import Navigation from './Layout/Navigation'
@@ -13,9 +13,9 @@ function App() {
   const [selectedPrivateChat,setSelectedPrivateChat] = useState(null)
   const [userData,setUserData] = useState(riviUserData)
   const [privateContactList ,setPrivateContactList] = useState([])
-
+  // useEffect(() => {
+  // },[])
   const appProvider = { state, setstate, selectedPrivateChat, setSelectedPrivateChat, userData, setUserData,privateContactList ,setPrivateContactList}
-
   return (
     <div className="App">
       <Rivi.Provider value={appProvider}>
@@ -25,7 +25,7 @@ function App() {
             <PrivateSubWindow />
           </NavigationSubWindow>
         </section>
-        <section className="Appbody" onClick={()=>{console.log(selectedPrivateChat)}}>
+        <section className="Appbody">
           <MainWindow>
             {selectedPrivateChat!==null ? 
             <PrivateChat /> 

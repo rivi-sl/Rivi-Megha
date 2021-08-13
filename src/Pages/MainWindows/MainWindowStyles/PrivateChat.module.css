@@ -121,6 +121,7 @@
     align-items:center;
     /* overflow: hidden; */
     position: relative;
+    min-height: 40px;
 }
 
 .inputMessage{

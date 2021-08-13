@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import voiceMemo from './Components/MainWindowComponents/Private/audioRecord.mp3'
 
 const photoArrayBuilder = (c) => {
   let arr = [];
@@ -37,7 +38,7 @@ const db = [
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 17 2021 18:22:36 GMT+0530 (India Standard Time)"
@@ -61,7 +62,7 @@ const db = [
         message: "Lorem ipsum dolor sit amet, consectetur",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 17 2021 18:17:36 GMT+0530 (India Standard Time)"
@@ -69,7 +70,7 @@ const db = [
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 17 2021 18:40:36 GMT+0530 (India Standard Time)"
@@ -86,7 +87,7 @@ const db = [
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, rem doloribus iusto, corrupti molestias ullam quod magni amet doloremque repellat et voluptatibus hic consequatur nisi, nostrum voluptas? Corporis, aliquam placeat?",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:17:36 GMT+0530 (India Standard Time)"
         ),
@@ -102,7 +103,7 @@ const db = [
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:22:36 GMT+0530 (India Standard Time)"
@@ -126,7 +127,7 @@ const db = [
         message: "Lorem ipsum dolor sit amet, consectetur",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:17:36 GMT+0530 (India Standard Time)"
@@ -134,7 +135,7 @@ const db = [
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:40:36 GMT+0530 (India Standard Time)"
@@ -151,7 +152,7 @@ const db = [
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, rem doloribus iusto, corrupti molestias ullam quod magni amet doloremque repellat et voluptatibus hic consequatur nisi, nostrum voluptas? Corporis, aliquam placeat?",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:17:36 GMT+0530 (India Standard Time)"
         ),
@@ -167,7 +168,7 @@ const db = [
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:22:36 GMT+0530 (India Standard Time)"
@@ -191,7 +192,7 @@ const db = [
         message: "Lorem ipsum dolor sit amet, consectetur",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:17:36 GMT+0530 (India Standard Time)"
@@ -199,7 +200,7 @@ const db = [
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:40:36 GMT+0530 (India Standard Time)"
@@ -217,7 +218,7 @@ const db = [
           " https://youtube.com Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, rem doloribus iusto, corrupti molestias ullam quod magni amet doloremque repellat et voluptatibus hic consequatur nisi, nostrum voluptas? Corporis, aliquam placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eveniet veniam quod possimus nulla saepe amet? Corrupti numquam consequuntur eligendi nam tempora nostrum doloribus sint magni dolorem, unde, voluptatibus laborum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eveniet veniam quod possimus nulla saepe amet? Corrupti numquam consequuntur eligendi nam tempora nostrum doloribus sint magni dolorem, unde, voluptatibus laborum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eveniet veniam quod possimus nulla saepe amet? Corrupti numquam consequuntur eligendi nam tempora nostrum doloribus sint magni dolorem, unde, voluptatibus laborum?",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:42:36 GMT+0530 (India Standard Time)"
@@ -226,7 +227,7 @@ const db = [
           "This message is supposed to have an url which is kinda cool like https://youtube.com",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:42:36 GMT+0530 (India Standard Time)"
@@ -255,12 +256,20 @@ Date - 2021.07.27(Tuesday)
                 `,
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 31 2021 18:17:36 GMT+0530 (India Standard Time)"
         ),
         message: "Lorem ipsum https://acicts.lk dolor sit amet, consectetur",
+      },
+      {
+        senderId: "0202020202",
+        type: "voiceMessage",
+        timeStamp: new Date(
+          "Sun Jul 31 2021 18:30:36 GMT+0530 (India Standard Time)"
+        ),
+        voiceMessage: voiceMemo
       },
     ],
   },
@@ -283,7 +292,7 @@ Date - 2021.07.27(Tuesday)
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 17 2021 18:22:36 GMT+0530 (India Standard Time)"
@@ -307,7 +316,7 @@ Date - 2021.07.27(Tuesday)
         message: "Lorem ipsum dolor sit amet, consectetur",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 17 2021 18:17:36 GMT+0530 (India Standard Time)"
@@ -315,7 +324,7 @@ Date - 2021.07.27(Tuesday)
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 17 2021 18:40:36 GMT+0530 (India Standard Time)"
@@ -332,7 +341,7 @@ Date - 2021.07.27(Tuesday)
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, rem doloribus iusto, corrupti molestias ullam quod magni amet doloremque repellat et voluptatibus hic consequatur nisi, nostrum voluptas? Corporis, aliquam placeat?",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:17:36 GMT+0530 (India Standard Time)"
         ),
@@ -348,7 +357,7 @@ Date - 2021.07.27(Tuesday)
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:22:36 GMT+0530 (India Standard Time)"
@@ -372,7 +381,7 @@ Date - 2021.07.27(Tuesday)
         message: "Lorem ipsum dolor sit amet, consectetur",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:17:36 GMT+0530 (India Standard Time)"
@@ -380,7 +389,7 @@ Date - 2021.07.27(Tuesday)
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 18 2021 18:40:36 GMT+0530 (India Standard Time)"
@@ -397,7 +406,7 @@ Date - 2021.07.27(Tuesday)
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, rem doloribus iusto, corrupti molestias ullam quod magni amet doloremque repellat et voluptatibus hic consequatur nisi, nostrum voluptas? Corporis, aliquam placeat?",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:17:36 GMT+0530 (India Standard Time)"
         ),
@@ -413,7 +422,7 @@ Date - 2021.07.27(Tuesday)
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:22:36 GMT+0530 (India Standard Time)"
@@ -437,7 +446,7 @@ Date - 2021.07.27(Tuesday)
         message: "Lorem ipsum dolor sit amet, consectetur",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:17:36 GMT+0530 (India Standard Time)"
@@ -445,7 +454,7 @@ Date - 2021.07.27(Tuesday)
         message: "minim veniam, quis nostrud exercitation",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:40:36 GMT+0530 (India Standard Time)"
@@ -463,7 +472,7 @@ Date - 2021.07.27(Tuesday)
           " https://youtube.com Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, rem doloribus iusto, corrupti molestias ullam quod magni amet doloremque repellat et voluptatibus hic consequatur nisi, nostrum voluptas? Corporis, aliquam placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eveniet veniam quod possimus nulla saepe amet? Corrupti numquam consequuntur eligendi nam tempora nostrum doloribus sint magni dolorem, unde, voluptatibus laborum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eveniet veniam quod possimus nulla saepe amet? Corrupti numquam consequuntur eligendi nam tempora nostrum doloribus sint magni dolorem, unde, voluptatibus laborum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eveniet veniam quod possimus nulla saepe amet? Corrupti numquam consequuntur eligendi nam tempora nostrum doloribus sint magni dolorem, unde, voluptatibus laborum?",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:42:36 GMT+0530 (India Standard Time)"
@@ -472,16 +481,16 @@ Date - 2021.07.27(Tuesday)
           "This message is supposed to have an url which is kinda cool like https://youtube.com",
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:42:36 GMT+0530 (India Standard Time)"
         ),
         message:
-          "This message is supposed to be from user 0101010101 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "This message is supposed to be from user 12345632431432 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       },
       {
-        senderId: "0202020202",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 19 2021 18:42:36 GMT+0530 (India Standard Time)"
@@ -501,12 +510,54 @@ Date - 2021.07.27(Tuesday)
                 `,
       },
       {
-        senderId: "0101010101",
+        senderId: "12345632431432",
         type: "textMessage",
         timeStamp: new Date(
           "Sun Jul 30 2021 18:17:36 GMT+0530 (India Standard Time)"
         ),
         message: "Lorem ipsum https://acicts.lk dolor sit amet, consectetur",
+      },
+      {
+        senderId: "12345632431432",
+        type: "mediaPhoto",
+        timeStamp: new Date(
+          "Sun Jul 30 2021 18:17:36 GMT+0530 (India Standard Time)"
+        ),
+        message: "This message, will be show in the chat room",
+        photoLink: "https://picsum.photos/720/1080?random=1"
+      },
+      {
+        senderId: "12345632431432",
+        type: "mediaPhoto",
+        timeStamp: new Date(
+          "Sun Jul 30 2021 18:17:36 GMT+0530 (India Standard Time)"
+        ),
+        photoLink: "https://picsum.photos/1080/720?random=2"
+      },
+      {
+        senderId: "0202020202",
+        type: "mediaPhoto",
+        timeStamp: new Date(
+          "Sun Jul 30 2021 18:17:36 GMT+0530 (India Standard Time)"
+        ),
+        photoLink: "https://picsum.photos/1080/720?random=3"
+      },
+      {
+        senderId: "12345632431432",
+        type: "voiceMessage",
+        timeStamp: new Date(
+          "Sun Jul 31 2021 18:30:36 GMT+0530 (India Standard Time)"
+        ),
+        voiceMessage: voiceMemo
+      },
+      {
+        senderId: "12345632431432",
+        type: "mediaPhoto",
+        timeStamp: new Date(
+          "Sun Jul 30 2021 18:17:36 GMT+0530 (India Standard Time)"
+        ),
+        message: "This message, will be show in the chat room",
+        photoLink: "https://picsum.photos/720/1080?random=1"
       },
     ],
   },
