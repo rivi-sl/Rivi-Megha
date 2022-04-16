@@ -20,8 +20,21 @@ import Photo from './Icons/Photo.svg'
 import Document from './Icons/Document.svg'
 import Play from './Icons/Play.svg'
 import Pause from './Icons/Pause.svg'
+import {ReactComponent as ProfileStyle} from './Icons/ProfileStyle.svg'
+import {ReactComponent as PrivateStyle} from './Icons/PrivateStyle.svg'
+import {ReactComponent as GroupStyle} from './Icons/GroupStyle.svg'
+import {ReactComponent as GlobalStyle} from './Icons/GlobalStyle.svg'
+import {ReactComponent as SettingsStyle} from './Icons/SettingsStyle.svg'
+import {ReactComponent as NewChatStyle} from './Icons/NewChatStyle.svg'
+
+
+
 
 const IconExplorer = (s,i,style) =>{
+    const stylings = {
+        width: s,
+        height: s
+    }
     const IconLibrary = {
         ProfileIcon: <img src={Profile} style={style?style:null} width={s} alt='Rivicon-Profile' />,
         PrivateIcon: <img src={Private} style={style?style:null} width={s} alt='Rivicon-Private' />,
@@ -44,6 +57,16 @@ const IconExplorer = (s,i,style) =>{
         DocumentIcon : <img src={Document} style={style?style:null} width={s} alt='Rivicon-Document' />,
         PlayIcon : <img src={Play} style={style?style:null} width={s} alt='Rivicon-Play' />,
         PauseIcon : <img src={Pause} style={style?style:null} width={s} alt='Rivicon-Pause' />,
+
+        ProfileStyleIcon: <ProfileStyle className="style-icons" style={stylings}/>,
+        PrivateStyleIcon: <PrivateStyle className="style-icons" style={stylings}/>,
+        GroupStyleIcon: <GroupStyle className="style-icons" style={stylings}/>,
+        GlobalStyleIcon: <GlobalStyle className="style-icons" style={stylings}/>,
+        SettingsStyleIcon: <SettingsStyle className="style-icons" style={stylings}/>,
+        NewChatStyleIcon: <NewChatStyle className="style-icons" style={stylings}/>
+
+
+
     }
     return IconLibrary[i]
 }
