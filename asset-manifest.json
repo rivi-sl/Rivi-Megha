@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/rivi-k/static/css/main.095f1250.chunk.css",
-    "main.js": "/rivi-k/static/js/main.46dc403a.chunk.js",
-    "main.js.map": "/rivi-k/static/js/main.46dc403a.chunk.js.map",
+    "main.css": "/rivi-k/static/css/main.2d5a8df3.chunk.css",
+    "main.js": "/rivi-k/static/js/main.cf47e280.chunk.js",
+    "main.js.map": "/rivi-k/static/js/main.cf47e280.chunk.js.map",
     "runtime-main.js": "/rivi-k/static/js/runtime-main.a8506c9e.js",
     "runtime-main.js.map": "/rivi-k/static/js/runtime-main.a8506c9e.js.map",
     "static/js/2.8482f30c.chunk.js": "/rivi-k/static/js/2.8482f30c.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.b2c63067.chunk.js": "/rivi-k/static/js/3.b2c63067.chunk.js",
     "static/js/3.b2c63067.chunk.js.map": "/rivi-k/static/js/3.b2c63067.chunk.js.map",
     "index.html": "/rivi-k/index.html",
-    "static/css/main.095f1250.chunk.css.map": "/rivi-k/static/css/main.095f1250.chunk.css.map",
+    "static/css/main.2d5a8df3.chunk.css.map": "/rivi-k/static/css/main.2d5a8df3.chunk.css.map",
     "static/js/2.8482f30c.chunk.js.LICENSE.txt": "/rivi-k/static/js/2.8482f30c.chunk.js.LICENSE.txt",
     "static/media/Attach.f03a1658.svg": "/rivi-k/static/media/Attach.f03a1658.svg",
     "static/media/Camera.77d93861.svg": "/rivi-k/static/media/Camera.77d93861.svg",
@@ -22,29 +22,29 @@
     "static/media/Document.2759b724.svg": "/rivi-k/static/media/Document.2759b724.svg",
     "static/media/Emoticon.395d6ecc.svg": "/rivi-k/static/media/Emoticon.395d6ecc.svg",
     "static/media/Global.33330dcc.svg": "/rivi-k/static/media/Global.33330dcc.svg",
-    "static/media/GlobalStyle.61b0d50f.svg": "/rivi-k/static/media/GlobalStyle.61b0d50f.svg",
+    "static/media/GlobalStyle.72f92775.svg": "/rivi-k/static/media/GlobalStyle.72f92775.svg",
     "static/media/Group.fbf4250f.svg": "/rivi-k/static/media/Group.fbf4250f.svg",
-    "static/media/GroupStyle.52d71e3e.svg": "/rivi-k/static/media/GroupStyle.52d71e3e.svg",
+    "static/media/GroupStyle.ba136fc0.svg": "/rivi-k/static/media/GroupStyle.ba136fc0.svg",
     "static/media/Mic.e26bf688.svg": "/rivi-k/static/media/Mic.e26bf688.svg",
     "static/media/NewChatIcon.a43c537a.svg": "/rivi-k/static/media/NewChatIcon.a43c537a.svg",
-    "static/media/NewChatStyle.22fd8fdf.svg": "/rivi-k/static/media/NewChatStyle.22fd8fdf.svg",
+    "static/media/NewChatStyle.3909aa33.svg": "/rivi-k/static/media/NewChatStyle.3909aa33.svg",
     "static/media/Pause.0b1e216f.svg": "/rivi-k/static/media/Pause.0b1e216f.svg",
     "static/media/Photo.191f3735.svg": "/rivi-k/static/media/Photo.191f3735.svg",
     "static/media/Play.cec52678.svg": "/rivi-k/static/media/Play.cec52678.svg",
     "static/media/Private.fd7ff542.svg": "/rivi-k/static/media/Private.fd7ff542.svg",
-    "static/media/PrivateStyle.05413f7d.svg": "/rivi-k/static/media/PrivateStyle.05413f7d.svg",
+    "static/media/PrivateStyle.0aa25038.svg": "/rivi-k/static/media/PrivateStyle.0aa25038.svg",
     "static/media/Profile.254e355b.svg": "/rivi-k/static/media/Profile.254e355b.svg",
-    "static/media/ProfileStyle.c0faa284.svg": "/rivi-k/static/media/ProfileStyle.c0faa284.svg",
+    "static/media/ProfileStyle.b2b07ea8.svg": "/rivi-k/static/media/ProfileStyle.b2b07ea8.svg",
     "static/media/Searchbar.0fb158f1.svg": "/rivi-k/static/media/Searchbar.0fb158f1.svg",
     "static/media/Send.eba04e63.svg": "/rivi-k/static/media/Send.eba04e63.svg",
     "static/media/Settings.7c0ce1df.svg": "/rivi-k/static/media/Settings.7c0ce1df.svg",
-    "static/media/SettingsStyle.4a36d40c.svg": "/rivi-k/static/media/SettingsStyle.4a36d40c.svg",
+    "static/media/SettingsStyle.a7133eb6.svg": "/rivi-k/static/media/SettingsStyle.a7133eb6.svg",
     "static/media/audioRecord.37193f34.mp3": "/rivi-k/static/media/audioRecord.37193f34.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.a8506c9e.js",
     "static/js/2.8482f30c.chunk.js",
-    "static/css/main.095f1250.chunk.css",
-    "static/js/main.46dc403a.chunk.js"
+    "static/css/main.2d5a8df3.chunk.css",
+    "static/js/main.cf47e280.chunk.js"
   ]
 }
