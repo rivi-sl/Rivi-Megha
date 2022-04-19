@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as styles from "../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css";
 import moment from "moment";
 import Linkify from "react-linkify";
-import axios from "axios";
+import axios from '../../../axios'
 import _ from "lodash";
 
 export const ChatOut = (props) => {
@@ -25,8 +25,7 @@ export const ChatOut = (props) => {
           url: match[0],
         },
       };
-      axios
-        .get("https://meta-data-scraper.herokuapp.com/url", config)
+      await axios.get(`/api/v1/url`, config)
         .then(function (response) {
           let urlMetaData = response.data;
           setMetaData({
