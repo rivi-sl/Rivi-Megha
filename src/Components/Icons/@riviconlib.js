@@ -20,6 +20,7 @@ import Photo from './Icons/Photo.svg'
 import Document from './Icons/Document.svg'
 import Play from './Icons/Play.svg'
 import Pause from './Icons/Pause.svg'
+import Edit from './Icons/edit.svg'
 
 const IconExplorer = (s,i,style) =>{
     const IconLibrary = {
@@ -44,6 +45,7 @@ const IconExplorer = (s,i,style) =>{
         DocumentIcon : <img src={Document} style={style?style:null} width={s} alt='Rivicon-Document' />,
         PlayIcon : <img src={Play} style={style?style:null} width={s} alt='Rivicon-Play' />,
         PauseIcon : <img src={Pause} style={style?style:null} width={s} alt='Rivicon-Pause' />,
+        EditIcon : <img src={Edit} style={style?style:null} width={s} alt='Rivicon-Pause' />,
     }
     return IconLibrary[i]
 }

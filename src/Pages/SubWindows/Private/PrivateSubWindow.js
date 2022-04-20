@@ -9,7 +9,7 @@ import {ContactDataExplorer,ContactDataReciever} from './PrivateFunctions/Contac
 const PrivateSubWindow = () => {
     const [tab,toggleTab] = useState('allCon')
     const [changeChat,triggerChangeChat] = useState(null)
-    const { userData, selectedPrivateChat, setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useContext(Rivi)
+    const { setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useContext(Rivi)
     useEffect(() => {
         setSelectedPrivateChat(null)
         setTimeout(()=>{
@@ -19,7 +19,7 @@ const PrivateSubWindow = () => {
     },changeChat)
     useEffect(() => {
         setPrivateContactList(ContactDataReciever())
-        console.log(ContactDataReciever())
+        // console.log(ContactDataReciever())
     },privateContactList)
     return (
         <Fragment>
