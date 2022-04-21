@@ -1,0 +1,132 @@
+.title{
+    font-weight: 700;
+    font-size: 1.4em;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profilePic{
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
+}
+
+.profilePic:hover .edit_pic_icon{
+    display: inline;
+}
+
+.UserProfilePic{
+    border-radius: 10em;
+    height: 100%;
+    width: auto;
+    margin-top: 5%;
+    border: 5px solid #DE4B1E;
+    transition: border 0.3s;
+    z-index: -1;
+}
+
+.edit_pic_icon{
+    background-color: #DE4B1E;
+    position: absolute;
+    top: 33%;
+    right: 25%;
+    border-radius: 1rem;
+    display: none;
+    
+}
+
+.profileName{
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+.editName , .editBio{
+    padding-bottom: 1%;
+    border-bottom: 3px black solid;
+    margin-right: 40%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    display: none;
+    transition: 1s;
+}
+.name{
+    text-align: center;
+}
+.name span{
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.edit_name_icon{
+    background-color: #DE4B1E;
+    position: absolute;
+    top: 40%;
+    right: 12%;
+    border-radius: 1rem;
+    display: none;
+    
+}
+
+.profileName:hover .edit_name_icon{
+    display: inline;
+}
+
+.profileName:hover .editName{
+    display: block;
+}
+
+
+.profileBio{
+    margin-top: 3%;
+    margin-right: 3%;
+}
+
+.bio{
+    background-color: #F4E8E0;
+    border-radius: 10rem;
+    padding: 2%;
+    text-align: center;
+
+    
+}
+
+.bio span{
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.edit_bio_icon{
+    background-color: #DE4B1E;
+    position: absolute;
+    top: 48%;
+    right: 10%;
+    border-radius: 1rem;
+    display: none;   
+}
+
+.profileBio:hover .edit_bio_icon{
+    display: inline;
+}
+
+.profileBio:hover .editBio{
+    display: block;
+}
+
+.logout{
+    margin-top: 15%;
+}
+
+.logoutBtn{
+    margin-left: 36%;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #F4E8E0;
+    background-color: #DE4B1E;
+    padding: 10px;
+    border: none;
+    border-radius: 0.6rem;
+}
+
+

@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react'
 import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
 import moment from 'moment'
 import Linkify from 'react-linkify'
-import axios from "axios";
+// import axios from "axios";
+import axios from '../../../axios'
 import _ from "lodash";
 
 export const ChatIn = (props) => {
+
+  
     const {message,lastUser,timeStamp} = props
     const [metaData, setMetaData] = useState({
         imgLink: "https://i.ibb.co/Jd2xvP2/website-Preloader-Thumbnail.png",
         title: "Web Link Previewer",
         desc: "This is Sample Web Link Previewer and this is the long description",
+        link: ""
       });
       const checkForUrlToGetMetaTagData = async (message_string) => {
         let urlCheckerRegexExpression = /(?:https?|ftp):\/\/[\n\S]+/g;
@@ -23,16 +27,17 @@ export const ChatIn = (props) => {
             },
             params: {
               url: match[0],
+              // url: 'https://github.com/Hasala2002',
             },
           };
-          axios
-            .get("https://meta-data-scraper.herokuapp.com/url", config)
+          await axios.get(`/api/v1/url`, config)
             .then(function (response) {
               let urlMetaData = response.data;
               setMetaData({
                 title: urlMetaData.title,
                 desc: urlMetaData.description,
                 imgLink: urlMetaData.image ? urlMetaData.image : urlMetaData.logo,
+                link:match[0]
               });
               // console.log(urlMetaData)
             })
@@ -58,7 +63,7 @@ export const ChatIn = (props) => {
            <span><Linkify componentDecorator={hrefDecorator}>{message}</Linkify></span>
             <span className={styles.timeStampIn}>{moment(timeStamp).format('LT')}</span>
             {metaTagState ? (
-        <div className={styles.metaInfoSection}>
+        <div className={styles.metaInfoSection} onClick={()=>{if(metaData.link!==''){window.open(metaData.link,'_blank')}}}>
           <img src={metaData.imgLink} alt="imagePreloader" />
           <div>
             <span className={styles.metaTitle}>
