@@ -20,6 +20,7 @@ import Photo from './Icons/Photo.svg'
 import Document from './Icons/Document.svg'
 import Play from './Icons/Play.svg'
 import Pause from './Icons/Pause.svg'
+import Edit from './Icons/edit.svg'
 import {ReactComponent as ProfileStyle} from './Icons/ProfileStyle.svg'
 import {ReactComponent as PrivateStyle} from './Icons/PrivateStyle.svg'
 import {ReactComponent as GroupStyle} from './Icons/GroupStyle.svg'
@@ -57,6 +58,7 @@ const IconExplorer = (s,i,style) =>{
         DocumentIcon : <img src={Document} style={style?style:null} width={s} alt='Rivicon-Document' />,
         PlayIcon : <img src={Play} style={style?style:null} width={s} alt='Rivicon-Play' />,
         PauseIcon : <img src={Pause} style={style?style:null} width={s} alt='Rivicon-Pause' />,
+        EditIcon : <img src={Edit} style={style?style:null} width={s} alt='Rivicon-Pause' />,
 
         ProfileStyleIcon: <ProfileStyle className="style-icons" style={stylings}/>,
         PrivateStyleIcon: <PrivateStyle className="style-icons" style={stylings}/>,
