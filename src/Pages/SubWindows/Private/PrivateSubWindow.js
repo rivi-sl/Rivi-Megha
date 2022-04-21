@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import {useContext, useEffect, useState ,Fragment} from 'react'
 import * as styles from '../SubWindowStyles/Private.module.css'
 import Rivicon  from '../../../Components/Icons/Rivicon'
 import PrivateContactList from '../../../Components/SubWindowComponents/Private/PrivateContactList'
@@ -9,7 +9,7 @@ import {ContactDataExplorer,ContactDataReciever} from './PrivateFunctions/Contac
 const PrivateSubWindow = () => {
     const [tab,toggleTab] = useState('allCon')
     const [changeChat,triggerChangeChat] = useState(null)
-    const { userData, selectedPrivateChat, setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useContext(Rivi)
+    const { setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useContext(Rivi)
     useEffect(() => {
         setSelectedPrivateChat(null)
         setTimeout(()=>{
@@ -19,10 +19,10 @@ const PrivateSubWindow = () => {
     },changeChat)
     useEffect(() => {
         setPrivateContactList(ContactDataReciever())
-        console.log(ContactDataReciever())
+        // console.log(ContactDataReciever())
     },privateContactList)
     return (
-        <React.Fragment>
+        <Fragment>
             <span className={styles.title}>Private Messages</span>
             <div className={styles.searchBox}>
                  <Rivicon i='SearchbarIcon' s='22' mt={0} nav={false} selected={false} /> 
@@ -40,7 +40,7 @@ const PrivateSubWindow = () => {
             <div className={styles.newChatButton}>
                 <Rivicon i='NewChatStyleIcon' s='22' mt={0} nav={false} selected={false} /> 
             </div>
-        </React.Fragment>
+        </Fragment>
     )
 }
 
