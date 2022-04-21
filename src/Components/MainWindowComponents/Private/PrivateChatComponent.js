@@ -12,17 +12,21 @@ import moment from 'moment'
 import Rivi from '../../../Rivi.Context'
 
 export const PrivateChatComponent = (props) => {
-    const {messages} = props
+    const {messages,chatWindow} = props
     const divRef = useRef(null);
     const [btnVisible,setButtonVisible] = useState(false)
     const {userData} = useContext(Rivi)
     // useEffect(()=>{divRef.current.scrollIntoView();},[])
-        const chatWindow = document.getElementById('chatWindow')
         // chatWindow.addEventListener('scroll',()=>{
         //     if(chatWindow.scrollHeight - chatWindow.scrollTop-100 <= chatWindow.clientHeight){
         //         setButtonVisible(false);
         //     }else{setButtonVisible(true)}
         // })
+
+    useEffect(() => {
+        chatWindow.current.scroll(0,chatWindow.current.scrollHeight)
+    },[messages])
+
     const handleScrollToBottom = () => {
         divRef.current.scrollIntoView({ behavior: 'smooth' });
     }
