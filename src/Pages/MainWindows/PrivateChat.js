@@ -46,5 +46,5 @@ const PrivateChat = () => {
         </PrivateImageViewer.Provider>
     )
 }
-
+ 
 export default PrivateChat
