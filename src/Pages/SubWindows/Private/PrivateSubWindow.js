@@ -38,7 +38,7 @@ const PrivateSubWindow = () => {
             <PrivateContactListOnline chatData={privateContactList} triggerChangeChat={triggerChangeChat} />
         }
             <div className={styles.newChatButton}>
-                <Rivicon i='NewChatIcon' s='22' mt={0} nav={false} selected={false} /> 
+                <Rivicon i='NewChatStyleIcon' s='22' mt={0} nav={false} selected={false} /> 
             </div>
         </Fragment>
     )
