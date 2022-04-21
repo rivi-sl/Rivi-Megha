@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState,useRef } from 'react'
 import * as styles from './MainWindowStyles/PrivateChat.module.css'
 import Header from '../../Components/MainWindowComponents/Private/Header'
 import SendArea from '../../Components/MainWindowComponents/Private/SendArea'
@@ -13,6 +13,9 @@ const PrivateChat = () => {
     const [active, setActive] = useState(false)
     const [imageUrl, setImageUrl] = useState('')
     const { selectedPrivateChat, setSelectedPrivateChat } = useContext(Rivi)
+
+    // const [loadedData,setLoadedData] = useState(false)
+    const chatWindow = useRef(0)
 
     const handleToggleProfile = () => {
         const profileInfoSection = document.getElementById("profileInfoSection")
@@ -32,8 +35,8 @@ const PrivateChat = () => {
                 <div className={styles.header} onClick={()=>{handleToggleProfile()}}>
                     <Header profilePic={selectedPrivateChat.profilePic} name={selectedPrivateChat.name} online={selectedPrivateChat.online} about={selectedPrivateChat.about} />
                 </div>
-                <div className={styles.chatWindow} id="chatWindow">
-                    <PrivateChatComponent messages={selectedPrivateChat.conversation} />
+                <div className={styles.chatWindow} ref={chatWindow}>
+                    <PrivateChatComponent messages={selectedPrivateChat.conversation} chatWindow={chatWindow} />
                 </div>
                 <div className={styles.sendArea}>
                 <SendArea />
@@ -43,5 +46,5 @@ const PrivateChat = () => {
         </PrivateImageViewer.Provider>
     )
 }
-
+ 
 export default PrivateChat
