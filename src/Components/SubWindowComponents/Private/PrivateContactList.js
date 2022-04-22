@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import * as styles from '../../../Styles/PrivateSubWindow.module.css'
+import * as styles from './scss/All.module.scss'
 import PrivateContact from './PrivateContact'
 // import Rivi from '../../../Rivi.Context'
 

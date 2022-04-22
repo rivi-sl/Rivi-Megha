@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
+import * as styles from './scss/All.module.scss'
 
 const Header = (props) => {
     const {profilePic,name,about,online} = props

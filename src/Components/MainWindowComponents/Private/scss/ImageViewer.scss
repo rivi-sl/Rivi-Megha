@@ -1,0 +1,65 @@
+.imageViewer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.imageViewer > img{
+    max-width: 75%;
+    max-height: 40%;
+    /* min-width: 50%; */
+    min-height: 20%;
+    height: auto;
+}
+
+.imageViewerCloseButton{
+    position: absolute;
+    background-color: #DE4B1E;
+    width: 3rem;
+    height: 3rem;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .25s;
+    cursor: pointer;
+}
+
+.imageSlider{
+    width: 75%;
+    position: absolute;
+    height: 10%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    /* background-color: #000; */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.imageSlider > div{
+    height: 100%;
+    aspect-ratio: 1/1;
+    /* background-color: #000; */
+    margin: 0 10px 0 10px;
+    /* float: left; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.imageSlider::-webkit-scrollbar {
+    height: 5px;
+    background-color: transparent;
+}
+
+.imageSlider::-webkit-scrollbar-thumb {
+    background-color: #DE4B1E;
+}

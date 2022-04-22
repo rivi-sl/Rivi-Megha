@@ -1,0 +1,13 @@
+.scrollDownButton{
+    position: sticky;
+    background-color: #DE4B1E;
+    width: 3rem;
+    height: 3rem;
+    bottom: 0.5rem;
+    float: right;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .25s;
+    cursor: pointer;
+}

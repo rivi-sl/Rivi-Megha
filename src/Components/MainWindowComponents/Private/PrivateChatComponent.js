@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
+import * as styles from './scss/All.module.scss'
 import ChatOut from './ChatOut'
 import ChatIn from './ChatIn'
 import ImageIn from './ImageIn'

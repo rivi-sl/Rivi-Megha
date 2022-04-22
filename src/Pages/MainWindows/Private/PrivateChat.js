@@ -1,12 +1,12 @@
 import React, { useContext, useState,useRef } from 'react'
-import * as styles from './MainWindowStyles/PrivateChat.module.css'
-import Header from '../../Components/MainWindowComponents/Private/Header'
-import SendArea from '../../Components/MainWindowComponents/Private/SendArea'
-import PrivateChatComponent from '../../Components/MainWindowComponents/Private/PrivateChatComponent'
-import ProfileInfo from '../../Components/MainWindowComponents/Private/ProfileInfo'
+import * as styles from './scss/All.Module.scss'
+import Header from '../../../Components/MainWindowComponents/Private/Header'
+import SendArea from '../../../Components/MainWindowComponents/Private/SendArea'
+import PrivateChatComponent from '../../../Components/MainWindowComponents/Private/PrivateChatComponent'
+import ProfileInfo from '../../../Components/MainWindowComponents/Private/ProfileInfo'
 import PrivateImageViewer from './PrivateChatImageViewer.Context'
-import ImageViewer from '../../Components/MainWindowComponents/Private/ImageViewer'
-import Rivi from '../../Rivi.Context'
+import ImageViewer from '../../../Components/MainWindowComponents/Private/ImageViewer'
+import Rivi from '../../../Rivi.Context'
 
 const PrivateChat = () => {
 

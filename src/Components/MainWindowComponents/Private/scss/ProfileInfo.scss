@@ -1,0 +1,127 @@
+.profileInfo{
+    display: none;
+    flex: 0.4;
+    position: relative;
+    max-width: 375px;
+    min-width: 300px;
+    background-color: #fff;
+    height: 100%;
+    border-left: 1px solid rgba(62, 68, 69, 0.25);
+    /* display: flex; */
+    flex-direction: column;
+    transition: 0.25s cubic-bezier(.45,.38,.08,1);
+}
+
+.profileInfoPhoto{
+    width: 100%;
+    height: auto;
+}
+
+.profileInfoCard{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.profileInfoMedia{
+    width: 100%;
+    height: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #000; */
+}
+
+.profileInfoMediaTitle{
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 2.5vh, 1.1rem);
+}
+
+.profileInfoPhotos{
+    width: 100%;
+    height: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profileInfoPhotos::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.profileInfoPhotos::-webkit-scrollbar-thumb {
+    background-color: #DE4B1E;
+}
+
+.profileInfoPhotoBox{
+    min-width: 20%;
+    max-width: 75px;
+    margin: 10px;
+    flex: 1 1 20%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* .profileInfoPhotoBox > img{
+
+} */
+
+.profileInfoPhotoBox::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    /* box-shadow: inset 0 0 2000px #ffffff80; */
+    background-color:  rgba(22, 22, 22, 0.5);
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.25s;
+}
+
+.profileInfoPhotoBox:hover.profileInfoPhotoBox:before,.profileInfoPhotoBox:hover .openPhotoIcon{
+    opacity: 1;
+}
+
+.openPhotoIcon{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: 0.25s
+}
+
+.toggleProfileButton{
+    position: absolute;
+    background-color: #DE4B1E;
+    width: 3rem;
+    height: 3rem;
+    top: 1.5rem;
+    left: -1.5rem;
+    z-index: 2;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .25s;
+    cursor: pointer;
+}

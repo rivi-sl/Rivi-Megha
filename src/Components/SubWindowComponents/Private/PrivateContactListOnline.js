@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import * as styles from '../../../Styles/PrivateSubWindow.module.css'
+import * as styles from './scss/All.module.scss'
 import PrivateContact from './PrivateContact'
 
 const PrivateContactListOnline = (props) => {

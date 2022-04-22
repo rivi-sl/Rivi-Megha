@@ -1,0 +1,21 @@
+.chatInBoxImage{
+    max-width: 400px;
+    width: fit-content;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 0 0.75em 0.75em 0.75em;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatInBoxImage::after {
+    content: '';
+    position: absolute;
+    border: .5em solid transparent;
+    border-top-color: #fff;
+    border-right-color: #fff;
+    right: 100%;
+    top: 0%;
+}
