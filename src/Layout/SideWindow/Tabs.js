@@ -1,12 +1,10 @@
 import React from 'react'
 import * as styles from './scss/All.module.scss'
 
-const PrivateFiller = () => {
+export default ({children}) => {
     return (
-        <div>
-            
+        <div className={styles.navigationSubWindow}>
+            {children}
         </div>
     )
 }
-
-export default PrivateFiller

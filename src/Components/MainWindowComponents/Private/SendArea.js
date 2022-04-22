@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
+import * as styles from './scss/All.module.scss'
 import Rivicon from '../../Icons/Rivicon'
 
 const SendArea = () => {

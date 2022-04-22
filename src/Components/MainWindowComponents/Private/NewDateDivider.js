@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from '../../../Styles/Navigation.module.css'
+import * as styles from './scss/All.module.scss'
 import moment from "moment"
 
 export const NewDateDivider = (props) => {

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import './App.scss';
 import Rivi from './Rivi.Context'
-import Navigation from './Layout/Navigation'
-import NavigationSubWindow from './Layout/NavigationSubWindows/NavigationSubWindow'
-import ProfileSubWindow from './Pages/SubWindows/Profile/ProfileSubWindow';
-import PrivateSubWindow from './Pages/SubWindows/Private/PrivateSubWindow'
-import MainWindow from './Layout/MainWindow'
-import PrivateChat from './Pages/MainWindows/PrivateChat'
+import Navigation from './Layout/SideWindow/Navigation'
+import Tabs from './Layout/SideWindow/Tabs'
+import ProfileSideWindow from './Pages/SideWindows/Profile/ProfileSideWindow';
+import PrivateSideWindow from './Pages/SideWindows/Private/PrivateSideWindow'
+import MainWindow from './Layout/MainWindow/MainWindow'
+import PrivateChat from './Pages/MainWindows/Private/PrivateChat'
 import riviUserData from  './userData'
 import {BrowserRouter as Router , Route , Routes} from 'react-router-dom'
 
@@ -24,12 +24,12 @@ function App() {
       <Rivi.Provider value={appProvider}>
         <section className="Appbar">
           <Navigation />
-          <NavigationSubWindow>
+          <Tabs>
             <Routes>
-              <Route path = "/profile" element={<ProfileSubWindow/>} />
-              <Route path = "/private" element={<PrivateSubWindow/>} />
+              <Route path = "/profile" element={<ProfileSideWindow/>} />
+              <Route path = "/private" element={<PrivateSideWindow/>} />
             </Routes>
-          </NavigationSubWindow>
+          </Tabs>
         </section>
         <section className="Appbody">
           <MainWindow>

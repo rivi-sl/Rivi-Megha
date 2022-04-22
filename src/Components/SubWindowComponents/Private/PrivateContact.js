@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from '../../../Styles/PrivateSubWindow.module.css'
+import * as styles from './scss/All.module.scss'
 
 const PrivateContact = (props) => {
     const {selected,name,profile,timeStamp,lastSMS,online,unread} = props

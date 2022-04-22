@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from '../Styles/MainWindow.module.css'
+import * as styles from './scss/All.module.scss'
 
 const MainWindow = ({children}) => {
     return (
