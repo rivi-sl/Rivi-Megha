@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
+import * as styles from './scss/All.module.scss'
 import moment from 'moment'
 import Rivicon from '../../Icons/Rivicon'
 

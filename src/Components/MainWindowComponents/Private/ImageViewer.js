@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react'
-import * as styles from '../../../Pages/MainWindows/MainWindowStyles/PrivateChat.module.css'
+import * as styles from './scss/All.module.scss'
 import Rivicon from '../../Icons/Rivicon'
-import PrivateImageViewer from '../../../Pages/MainWindows/PrivateChatImageViewer.Context'
+import PrivateImageViewer from '../../../Pages/MainWindows/Private/PrivateChatImageViewer.Context'
 
 export const ImageViewer = (props) => {
     const {setActive, imageUrl, setImageUrl} = useContext(PrivateImageViewer)

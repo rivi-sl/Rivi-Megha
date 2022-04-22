@@ -1,12 +1,12 @@
 import {useContext, useEffect, useState ,Fragment} from 'react'
-import * as styles from '../SubWindowStyles/Private.module.css'
+import * as styles from './scss/All.module.scss'
 import Rivicon  from '../../../Components/Icons/Rivicon'
 import PrivateContactList from '../../../Components/SubWindowComponents/Private/PrivateContactList'
 import PrivateContactListOnline from '../../../Components/SubWindowComponents/Private/PrivateContactListOnline'
 import Rivi from '../../../Rivi.Context'
-import {ContactDataExplorer,ContactDataReciever} from './PrivateFunctions/ContactData.Explorer'
+import {ContactDataExplorer,ContactDataReciever} from './Functions/ContactData.Explorer'
 
-const PrivateSubWindow = () => {
+const PrivateSideWindow = () => {
     const [tab,toggleTab] = useState('allCon')
     const [changeChat,triggerChangeChat] = useState(null)
     const { setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useContext(Rivi)
@@ -44,4 +44,4 @@ const PrivateSubWindow = () => {
     )
 }
 
-export default PrivateSubWindow
+export default PrivateSideWindow

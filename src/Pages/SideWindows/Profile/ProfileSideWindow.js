@@ -1,10 +1,10 @@
-import * as styles from '../SubWindowStyles/Profile.module.css'
+import * as styles from './scss/All.module.scss'
 import {useContext, useEffect, useState ,Fragment} from 'react'
 import Rivi from '../../../Rivi.Context'
 import Rivicon from '../../../Components/Icons/Rivicon'
 
 
-const ProfileSubWindow = () => {
+const ProfileSideWindow = () => {
     const {userData} = useContext(Rivi)
 
     return (  
@@ -54,4 +54,4 @@ const ProfileSubWindow = () => {
     );
 }
  
-export default ProfileSubWindow;
+export default ProfileSideWindow;

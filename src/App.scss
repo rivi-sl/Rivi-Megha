@@ -82,9 +82,10 @@ html,body,#root{
 }
 
 g#Petals, path#IconBG{
-  display: none;
+  /* display: none; */
   transform-origin: center center;
   opacity: 0;
+  transition: 0.5s;
 }
 
 /* path#IconBG{
@@ -98,6 +99,7 @@ g#Petals, path#IconBG{
   opacity: 1;
   -webkit-transform: rotate(360deg) scale(1.5);
   transform: rotate(360deg) scale(1.5);  
+  transition: 0.2s;
 }
 
 /* .selected-icon  g#Petals{

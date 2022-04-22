@@ -1,9 +1,9 @@
 import React, { useContext , useState , useEffect} from 'react'
-import *  as styles from '../Styles/Navigation.module.css'
-import '../Components/Icons/Icons.module.css'
-import Rivicon from '../Components/Icons/Rivicon'
+import *  as styles from './scss/All.module.scss'
+import '../../Components/Icons/Icons.module.css'
+import Rivicon from '../../Components/Icons/Rivicon'
 import {Link} from 'react-router-dom'
-import Rivi from './../Rivi.Context'
+import Rivi from '../../Rivi.Context'
 
 
 const Navigation = () => {
