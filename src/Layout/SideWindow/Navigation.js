@@ -10,10 +10,6 @@ const Navigation = () => {
     const [window , triggerWindow] = useState('profile')
     const { state, setState} = useContext(Rivi)
 
-    // useEffect(()=>{
-    //     setSelectedPrivateChat(null)
-    // })
-
     return (
         <div className={styles.navigationBar}>
             <section className={styles.profile}>
