@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.scss';
 import Rivi from './Rivi.Context'
 import Navigation from './Layout/SideWindow/Navigation'
@@ -8,7 +8,7 @@ import PrivateSideWindow from './Pages/SideWindows/Private/PrivateSideWindow'
 import MainWindow from './Layout/MainWindow/MainWindow'
 import PrivateChat from './Pages/MainWindows/Private/PrivateChat'
 import riviUserData from  './userData'
-import {BrowserRouter as Router , Route , Routes} from 'react-router-dom'
+import {BrowserRouter as Router , Navigate, Route , Routes} from 'react-router-dom'
 
 function App() {
   const [state, setstate] = useState('PROFILE')
@@ -27,22 +27,29 @@ function App() {
           <Tabs>
             <Routes>
               <Route path = "/profile" element={<ProfileSideWindow/>} />
-              <Route path = "/private" element={<PrivateSideWindow/>} />
+              <Route path = "/private/*" element={<PrivateSideWindow/>} />
+              <Route index element={<Navigate to="/profile"/>} />
             </Routes>
           </Tabs>
         </section>
         <section className="Appbody">
           <MainWindow>
-            {selectedPrivateChat!==null ?
-            <PrivateChat /> 
-            :
-            null
-           }
+            <Routes>
+              <Route path = "/profile" element={null} /> {/*duplicate */}
+              <Route path = "/private/*" 
+               element={selectedPrivateChat!==null ?
+              <PrivateChat /> 
+              :
+              null
+              } />
+              <Route index element={<Navigate to="/profile"/>} />
+            </Routes>
           </MainWindow>
         </section>
         </Rivi.Provider>
+      
     </div>
-    </Router>
+  </Router> 
   );
 } 
 
