@@ -5,7 +5,7 @@ import Rivicon from '../../../Components/Icons/Rivicon'
 
 
 const ProfileSideWindow = () => {
-    const {userData} = useContext(Rivi)
+    const {userData , setislogged} = useContext(Rivi)
 
     return (  
         <Fragment>
@@ -47,7 +47,7 @@ const ProfileSideWindow = () => {
             </div>
 
             <div className={styles.logout}>
-                <button className={styles.logoutBtn}>Logout</button>
+                <button className={styles.logoutBtn} onClick={()=>{setislogged(false)}}>Logout</button>
             </div>
         </Fragment>   
         
