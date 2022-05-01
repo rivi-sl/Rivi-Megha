@@ -6,10 +6,12 @@ const Rivi = createContext({
     selectedPrivateChat : null,
     userData : {},
     privateContactList: [],
+    islogged: false,
     setState: () => {},
     setSelectedPrivateChat: () => {}, 
     setUserData: ()=>{},
-    setPrivateContactList: ()=> {}
+    setPrivateContactList: ()=> {},
+    setislogged:()=> {}
 })
 
 export default Rivi

@@ -1,0 +1,140 @@
+.form{
+    margin: auto;
+    margin-top: 5%;
+    width: 75%;
+    text-align: center;
+}
+.form form{
+    margin-top: 30px;
+}
+.title{
+    font-size: 2.3em;
+    font-weight: 500;
+    margin-left:auto;
+}
+.input_firstName,.input_lastName{
+    border: 1px solid #5B5B5B;
+    border-radius: 1em;
+    margin-bottom: 20px;
+    padding: 10px;
+ 
+}
+.input_firstName{
+  margin-right: 40px;
+}
+ .input_email{
+    border: 1px solid #5B5B5B;
+    border-radius: 1em;
+    width: 100%;
+    padding: 10px;
+ }
+
+ .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 25px;
+  } 
+  .divider::after,
+  .divider::before {
+    content: "";
+    border:0.5px solid black;
+    flex: 1;
+  }
+  
+  /* Space on left and right sides of text */
+  .divider:not(:empty)::before {
+    margin-right: 0.25em;
+  }
+  
+  .divider:not(:empty)::after {
+    margin-left: 0.25em;
+  }
+
+ .googleAuth{
+     font-size: 0.8em;
+}
+
+.google_fill{
+  margin-top: 0;
+   margin-left: auto;
+   margin-right: auto;
+   width: 12%;
+}
+
+.input_password{
+  width: 100%;
+  border-radius: 1em;
+  border: none;
+  background-color: #DFDFDF;
+  padding: 10px;
+
+}
+
+.check{
+  display: block;
+  position: relative;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+  padding-left: 32px;
+
+}
+.check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 23px;
+  width: 23px;
+  border-radius: 5px;
+  border: 1px solid #5B5B5B;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.check .checkmark:after {
+  margin: 3px;
+  border:  solid #DE4B1E;
+  border-width: 8px;
+  border-radius: 2px;
+  
+}
+.important{
+  color: #DE4B1E;
+}
+.createBtn{
+  margin-top: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #FFFF;
+  background-color: #DE4B1E;
+  padding: 8px 20px 8px 20px;
+  border: none;
+  border-radius: 0.6rem;
+}
+
