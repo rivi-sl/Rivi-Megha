@@ -16,11 +16,11 @@ const PrivateSideWindow = () => {
             let newSelectedPrivateChat = ContactDataExplorer(changeChat)
             setSelectedPrivateChat(newSelectedPrivateChat)
         },100)
-    },changeChat)
+    },[changeChat,setSelectedPrivateChat])
     useEffect(() => {
         setPrivateContactList(ContactDataReciever())
         // console.log(ContactDataReciever())
-    },privateContactList)
+    },[setPrivateContactList])
     return (
         <Fragment>
             <span className={styles.title}>Private Messages</span>
