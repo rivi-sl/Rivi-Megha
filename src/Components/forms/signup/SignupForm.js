@@ -1,36 +1,41 @@
-import * as styles from './scss/All.module.scss'
-import Rivicon from '../../Icons/Rivicon';
+import * as styles from "./scss/All.module.scss";
+import Rivicon from "../../Icons/Rivicon";
 
 const SignupForm = () => {
-    return (
-        <div className={styles.form}>
-            <span className={styles.title}>Create New Account</span>
-            <form>
-                <input type="text" name="first_name" placeholder="First Name" className={styles.input_firstName}/>
-                <input type="text" name="last_name" placeholder="Last Name" className={styles.input_lastName}/>
-                <input type="email" name="email" placeholder="Email" className={styles.input_email}/>
-            </form>
-            
-            <span className={styles.divider}>OR</span>
-            <div className={styles.googleAuth}>
-                <span>Fill with</span>
-                <div className={styles.google_fill}>
-                <Rivicon i='GoogleIcon' s='48' mt={5} selected={false} nav={false} /> 
+	return (
+		<div className={styles.form}>
+			<span className={styles.title}>Create New Account</span>
+			<form>
+                <div className={styles.formLeft}>
+                    <input type="text" name="username" placeholder="User Name" className={styles.inputUserName} />
+                    <input type="email" name="email" placeholder="Email" className={styles.inputEmail} />
+                    <input type="password" name="password" placeholder="Password" className={styles.inputPassword} />
                 </div>
-            </div>
+				<div className={styles.formRight}>
+                    <div className={styles.imageArea}>
+                        Drag or click to upload user image.
+                    </div>
+                    {/* <input type="button" name="userimage" value="User Image" className={styles.inputUserImage} /> */}
+                </div>                
+				<div className={styles.formBottom}>
+                    <label className={styles.conditions}>
+                        <input type="checkbox" className={styles.inputCheck} />
+                        <span className={styles.checkBg}></span>
+                        Accept our <span className={styles.important}>Terms and Conditions</span>
+                    </label>
+                    <input type="submit" value="Create" className={styles.createBtn} />
+                </div>
+			</form>
 
-            <form>
-                <input type="password" name="password" placeholder="password" className={styles.input_password}/>
-                <label className={styles.check}>
-                    <input type="checkbox"/>
-                    <span className={styles.checkmark}></span>
-                    Accept our <span className={styles.important}>Terms and Conditions</span> 
-                    
-                </label>
-                <input type="submit" value="Create" className={styles.createBtn} />
-            </form>
-        </div>
-      );
-}
- 
+			{/* <span className={styles.divider}>OR</span> */}
+			<div className={styles.googleAuth}>
+				<span>Fill with</span>
+				<div className={styles.googleFill}>
+					<Rivicon i="GoogleIcon" s="48" mt={5} selected={false} nav={false} />
+				</div>
+			</div>
+		</div>
+	);
+};
+
 export default SignupForm;
