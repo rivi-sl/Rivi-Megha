@@ -1,37 +1,68 @@
-.body{
-    flex: 1;
-  height: 100%;
-  background-color: #f8f8f8;
-  border-radius: 1em 1em 1em 1em;
-  overflow: hidden;
-  position: relative;
-  min-width: 360px;
+.authWindow::before {
+	content: "";
+	position: absolute;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	/* z-index: 1; */
+	opacity: 0.05;
+	background-image: url("../../../Images/BackDrawingOriginal-withbg.png");
 }
 
-.body::before{
-    content: '';
-    position: absolute;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    opacity: 13%;
-    background-image: url('https://stupefied-meninsky-1b99f4.netlify.app/BackDrawingOriginal-withbg.eedd5bcd092c71ad6e80.png');
-  }
- .AuthSection{
-    background: rgba( 255, 255, 255, 0.8 );
-    box-shadow: 0 8px 32px 0 rgba(83, 83, 83, 0.37);
-    // backdrop-filter: blur( 5.5px );
-    // -webkit-backdrop-filter: blur( 5.5px );
-    border-radius: 1em;
-    // border: 1px solid rgba( 255, 255, 255, 0.18 );
-    height: 70%;
-    width: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  /* bring your own prefixes */
-    transform: translate(-50%, -50%);
- }
+// .background{
+//   svg {
+//     // width: 300px;
+//     opacity: 0.05;
+//     display: block;
+//     position: absolute;
 
+//     path {
+//       stroke-dasharray: 340;
+//       stroke-dashoffset: 40;
+//       // animation: dash 50s linear alternate infinite;
+//     }
+
+//     path {
+//       stroke-dasharray: 320;
+//       stroke-dashoffset: 320;
+//       // animation: dash2 50s linear alternate infinite;
+//       stroke: #eb683f;
+//     }
+
+//     @keyframes dash {
+//       from {
+//         stroke-dashoffset: 360;
+//       }
+//       to {
+//         stroke-dashoffset: 40;
+//       }
+//     }
+
+//     @keyframes dash2 {
+//       from {
+//         stroke-dashoffset: 280;
+//       }
+//       to {
+//         stroke-dashoffset: -40;
+//       }
+//     }
+//   }
+// }
+
+.authWindow {
+	flex: 1;
+	height: 100%;
+	background-color: #f8f8f8;
+	border-radius: 1em;
+	overflow: hidden;
+	position: relative;
+	// min-width: 360px;
+}
+
+@media only screen and (max-width: 768px) {
+	.authWindow {
+		// overflow: scroll;
+	}
+}
