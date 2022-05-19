@@ -13,5 +13,5 @@ const Rivi = createContext({
     setPrivateContactList: ()=> {},
     setislogged:()=> {}
 })
-
+ 
 export default Rivi

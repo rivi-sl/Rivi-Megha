@@ -1,15 +1,68 @@
 import * as styles from "./scss/All.module.scss";
 import Rivicon from "../../Icons/Rivicon";
+import React from 'react'
+import axios from 'axios'
 
 const SignupForm = () => {
+
+    const [email,setEmail] = React.useState('')
+    const [username,setUsername] = React.useState('')
+    const [password,setPassword] = React.useState('')
+    const [mobile,setMobile] = React.useState('')
+
+    function handleSubmit(event){
+        event.preventDefault()
+        const reqObj = {
+            username:username,
+            email:email,
+            password:password,
+            mobile:mobile
+        }
+
+        let axiosConfig = {
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		};
+
+		axios.post('http://localhost:8080/api/v1/user/signup', reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    alert(res.data.message)
+                }else{
+                    alert(res.data.message)
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    function handleChangeEmail(event){
+        setEmail(event.target.value)
+    }
+    
+    function handleChangeUserName(event){
+        setUsername(event.target.value)
+    }
+
+    function handleChangePassword(event){
+        setPassword(event.target.value)
+    }
+
+    function handleChangeMobile(event){
+        setMobile(event.target.value)
+    }
+
 	return (
 		<div className={styles.form}>
 			<span className={styles.title}>Create New Account</span>
 			<form>
                 <div className={styles.formLeft}>
-                    <input type="text" name="username" placeholder="User Name" className={styles.inputUserName} />
-                    <input type="email" name="email" placeholder="Email" className={styles.inputEmail} />
-                    <input type="password" name="password" placeholder="Password" className={styles.inputPassword} />
+                    <input type="text" name="username" placeholder="User Name" className={styles.inputUserName} onChange={(e)=>handleChangeUserName(e)}/>
+                    <input type="email" name="email" placeholder="Email" className={styles.inputEmail} onChange={(e)=>handleChangeEmail(e)}/>
+                    <input type="text" name="mobile" placeholder="Mobile" className={styles.inputPassword} onChange={(e)=>handleChangeMobile(e)}/>
+                    <input type="password" name="password" placeholder="Password" className={styles.inputPassword} onChange={(e)=>handleChangePassword(e)}/>
                 </div>
 				<div className={styles.formRight}>
                     <div className={styles.imageArea}>
@@ -23,7 +76,7 @@ const SignupForm = () => {
                         <span className={styles.checkBg}></span>
                         Accept our <span className={styles.important}>Terms and Conditions</span>
                     </label>
-                    <input type="submit" value="Create" className={styles.createBtn} />
+                    <input type="submit" value="Create" className={styles.createBtn} onClick={(e)=>handleSubmit(e)}/>
                 </div>
 			</form>
 

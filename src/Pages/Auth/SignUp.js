@@ -26,7 +26,7 @@ const SignUp = () => {
 				</section>
 
 				<section className={styles.signUp}>
-					<SignUpForm />
+					<SignUpForm /> 
 				</section>
 
 				<section className={styles.mobileLinks}>

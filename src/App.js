@@ -59,7 +59,7 @@ function App() {
         :
         <Rivi.Provider value={appProvider}>
           <Auth>
-            <Routes>
+            <Routes> 
               <Route path = "/sign_in" element={<SignIn/>} />
               <Route path = "/sign_up" element={<SignUp/>} />
               <Route path = "*" element={<Navigate to="/sign_in"/>} />
