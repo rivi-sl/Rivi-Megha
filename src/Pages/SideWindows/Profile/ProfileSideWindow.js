@@ -2,10 +2,18 @@ import * as styles from './scss/All.module.scss'
 import {useContext, useEffect, useState ,Fragment} from 'react'
 import Rivi from '../../../Rivi.Context'
 import Rivicon from '../../../Components/Icons/Rivicon'
+import { useAuth } from '../../../utilities/Auth.Context'
 
 
 const ProfileSideWindow = () => {
     const {userData , setislogged} = useContext(Rivi)
+
+    const { currentUser, logout } = useAuth()
+
+    const handleLogout = () => {
+        setislogged(false)
+        logout()
+    }
 
     return (  
         <div className={styles.wrapper}>
@@ -26,7 +34,7 @@ const ProfileSideWindow = () => {
                     <div className={styles.divider}>
                         <span>Edit</span>
                     </div>
-                    <div className={styles.name}>{userData.name}</div>
+                    <div className={styles.name}>{currentUser && currentUser.username}</div>
                 </div>
                 <div className={styles.userDataSet}>
                     <div className={styles.bioTitle}>About</div>
@@ -38,7 +46,7 @@ const ProfileSideWindow = () => {
            </div>
 
             <div className={styles.logout}>
-                <button className={styles.logoutBtn} onClick={()=>{setislogged(false)}}>Log out</button>
+                <button className={styles.logoutBtn} onClick={handleLogout}>Log out</button>
             </div>
         </div>   
         

@@ -4,12 +4,15 @@ import Rivi from "../../../Rivi.Context";
 import Rivicon from "../../Icons/Rivicon";
 import React from 'react';
 import axios from 'axios';
+import { useAuth } from "../../../utilities/Auth.Context";
 
-const SigninForm = () => {
+const SignInForm = () => {
 	const { setislogged } = useContext(Rivi);
 	const [email,setEmail] = React.useState('')
 	const [password,setPassword] = React.useState('')
 	const [response,setResponse] = React.useState('')
+
+	const {login} = useAuth()
 
 	function handleChangeEmail(event){
 		setEmail(event.target.value)
@@ -19,35 +22,42 @@ const SigninForm = () => {
 		setPassword(event.target.value)
 	}
 
-	function onSubmit(e){
+	async function onSubmit(e){
 		e.preventDefault()
-		const reqObject = {
-			email:email,
-			password:password
-		} 
 
-		let axiosConfig = {
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		};
+		try{
+			await login(email,password)
+			setislogged(true)
+		}catch(err){
+			console.log(err)
+		}
+		// const reqObject = {
+		// 	email,
+		// 	password
+		// } 
+		// let axiosConfig = {
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	}
+		// };
 
-		axios.post('http://localhost:8080/api/v1/user/signin', reqObject, axiosConfig)
-			.then((res) => {
-				if(res.data.success === true){
-					setislogged(true)
-				}else if(res.data.message === 'Invalid email'){
-					//make the err message
-					alert('Invalid email')		
-				}	
-				else if(res.data.message === 'Invalid password'){
-					//make the err message
-					alert('Invalid password')
-				}
-			})
-			.catch((err) => {
-				console.log("AXIOS ERROR: ", err);
-			})
+		// axios.post('http://localhost:8080/api/v1/user/signin', reqObject, axiosConfig)
+		// 	.then((res) => {
+		// 		if(res.data.success === true){
+		// 			console.log(res.data)
+		// 			setislogged(true)
+		// 		}else if(res.data.message === 'Invalid email'){
+		// 			//make the err message
+		// 			alert('Invalid email')		
+		// 		}	
+		// 		else if(res.data.message === 'Invalid password'){
+		// 			//make the err message
+		// 			alert('Invalid password')
+		// 		}
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log("AXIOS ERROR: ", err);
+		// 	})
 
 	}
 
@@ -79,4 +89,4 @@ const SigninForm = () => {
 	);
 };
 
-export default SigninForm;
+export default SignInForm;

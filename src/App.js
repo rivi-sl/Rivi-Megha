@@ -12,6 +12,7 @@ import {BrowserRouter as Router , Navigate, Route , Routes} from 'react-router-d
 import Auth from './Layout/Auth/Auth';
 import SignIn from './Pages/Auth/SignIn';
 import SignUp from './Pages/Auth/SignUp';
+import { AuthProvider } from './utilities/Auth.Context';
 
 function App() {
   const [state, setstate] = useState('PROFILE')
@@ -25,6 +26,7 @@ function App() {
   // },[])
   const appProvider = { state, setstate, selectedPrivateChat, setSelectedPrivateChat, userData, setUserData,privateContactList ,setPrivateContactList,islogged,setislogged}
   return (
+    <AuthProvider>
     <Router>
     <div className="App">
       {islogged?
@@ -70,6 +72,7 @@ function App() {
       }
     </div>
   </Router> 
+  </AuthProvider>
   );
 } 
 
