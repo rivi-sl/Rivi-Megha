@@ -38,9 +38,9 @@ export const VoiceMessageOut = (props) => {
         audioPlayer.current.currentTime = compute
     }
 
-    useEffect(()=>{
-        setCurrent(0)
-    },[])
+    // useEffect(()=>{
+    //     setCurrent(0)
+    // },[current])
 
     return (
         <div className={styles.chatOutBox}>

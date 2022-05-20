@@ -3,7 +3,7 @@ const riviUserData = {
     userId: '12345632431432',
     email: 'hhasala2002@gmail.com',
     profilePic: "https://avatars.githubusercontent.com/u/46789216?v=4",
-    bio: "<I'M BATMAN />",
+    bio: "test bio hehe",
     privateContact: [
         '000000000000',
         '000000000001',
