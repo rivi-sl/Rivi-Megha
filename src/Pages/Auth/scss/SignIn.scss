@@ -1,47 +1,12 @@
-.navigate_signup{
-    width: 35%;
-    height: 100%;
-    background-color: #eb683f;
-    border-radius: 1em 0 0 1em;
-    padding: 1rem 0 1rem 1rem;
+.signIn{
+    width: 600px;
+    z-index: 99;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    float: left;
-}
-
-.signin{
-    flex: 1;
-    height: 100%;
-    border-radius: 0 1em 1em 0;
-    overflow: hidden;
-    position: relative;
-  
-}
-
-.navigate_signup_content{
-    margin-top: 85%;
-    margin-left: 10%;
-    color: white;
-   
-}
-
-.navigate_signup_content span{
-    font-size: 1.8em;
-    font-weight: 600;
-}
- .navigate_signup_content p{
-     font-size: 1.2em;
- }
-
-.navigate_signupBtn{
-    margin-left: 20%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    font-weight: 600;
-    font-size: 1.2em;
-    color: #222222;
-    background-color: #ffffff;
-    padding: 8px 10px 8px 10px;
-    border: none;
-    border-radius: 0.6rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

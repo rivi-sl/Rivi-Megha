@@ -16,7 +16,7 @@ html,body,#root{
   height: 100%;
   padding: 0%;
   margin: 0;
-  background-color: #e5e5e5;
+  background-color: #373737;
   overflow: auto;
   min-height: 600px;
   color: #222222;
@@ -71,9 +71,8 @@ html,body,#root{
   top: 0;
   /* z-index: 1; */
   opacity: 0.05;
-  background-image: url('https://stupefied-meninsky-1b99f4.netlify.app/BackDrawingOriginal-withbg.eedd5bcd092c71ad6e80.png');
+  background-image: url('./Images/BackDrawingOriginal-withbg.png');
 }
-
 
 .icon{
   margin-bottom: 25%;

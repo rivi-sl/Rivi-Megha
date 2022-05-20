@@ -15,5 +15,5 @@ const riviUserData = {
         '000000000007',
     ]
 }
-
+ 
 export default riviUserData

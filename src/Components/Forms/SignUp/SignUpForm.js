@@ -1,0 +1,94 @@
+import * as styles from "./scss/All.module.scss";
+import Rivicon from "../../Icons/Rivicon";
+import React from 'react'
+import axios from 'axios'
+
+const SignupForm = () => {
+
+    const [email,setEmail] = React.useState('')
+    const [username,setUsername] = React.useState('')
+    const [password,setPassword] = React.useState('')
+    const [mobile,setMobile] = React.useState('')
+
+    function handleSubmit(event){
+        event.preventDefault()
+        const reqObj = {
+            username:username,
+            email:email,
+            password:password,
+            mobile:mobile
+        }
+
+        let axiosConfig = {
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		};
+
+		axios.post('http://localhost:8080/api/v1/user/signup', reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    alert(res.data.message)
+                }else{
+                    alert(res.data.message)
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    function handleChangeEmail(event){
+        setEmail(event.target.value)
+    }
+    
+    function handleChangeUserName(event){
+        setUsername(event.target.value)
+    }
+
+    function handleChangePassword(event){
+        setPassword(event.target.value)
+    }
+
+    function handleChangeMobile(event){
+        setMobile(event.target.value)
+    }
+
+	return (
+		<div className={styles.form}>
+			<span className={styles.title}>Create New Account</span>
+			<form>
+                <div className={styles.formLeft}>
+                    <input type="text" name="username" placeholder="User Name" className={styles.inputUserName} onChange={(e)=>handleChangeUserName(e)}/>
+                    <input type="email" name="email" placeholder="Email" className={styles.inputEmail} onChange={(e)=>handleChangeEmail(e)}/>
+                    <input type="text" name="mobile" placeholder="Mobile" className={styles.inputPassword} onChange={(e)=>handleChangeMobile(e)}/>
+                    <input type="password" name="password" placeholder="Password" className={styles.inputPassword} onChange={(e)=>handleChangePassword(e)}/>
+                </div>
+				<div className={styles.formRight}>
+                    <div className={styles.imageArea}>
+                        Drag or click to upload user image.
+                    </div>
+                    {/* <input type="button" name="userimage" value="User Image" className={styles.inputUserImage} /> */}
+                </div>                
+				<div className={styles.formBottom}>
+                    <label className={styles.conditions}>
+                        <input type="checkbox" className={styles.inputCheck} />
+                        <span className={styles.checkBg}></span>
+                        Accept our <span className={styles.important}>Terms and Conditions</span>
+                    </label>
+                    <input type="submit" value="Create" className={styles.createBtn} onClick={(e)=>handleSubmit(e)}/>
+                </div>
+			</form>
+
+			{/* <span className={styles.divider}>OR</span> */}
+			<div className={styles.googleAuth}>
+				<span>Fill with</span>
+				<div className={styles.googleFill}>
+					<Rivicon i="GoogleIcon" s="48" mt={5} selected={false} nav={false} />
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default SignupForm;

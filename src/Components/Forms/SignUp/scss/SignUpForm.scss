@@ -1,0 +1,382 @@
+.form {
+	margin: auto;
+	// margin-top: 5%;
+	width: 75%;
+	text-align: center;
+
+	.title {
+		font-size: 2.3em;
+		font-weight: 500;
+	}
+
+	form {
+		width: 100%;
+		margin-top: 30px;
+		gap: 15px;
+		display: grid;
+		display: -ms-grid;
+		justify-content: center;
+		align-items: center;
+		grid-template-columns: repeat(3, 1fr);
+		-ms-grid-columns: repeat(3, 1fr);
+		grid-auto-rows: auto;
+
+		div.formLeft,
+		div.formRight,
+		div.formBottom {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		div.formLeft {
+			grid-column: 1/3;
+			grid-row: 1;
+		}
+
+		div.formRight {
+			grid-column: 3/4;
+			grid-row: 1;
+		}
+
+		div.formBottom {
+			grid-column: 1/4;
+			grid-row: 2;
+		}
+
+		.imageArea {
+			background-color: #efeeee;
+			border: 2px dashed #17171742;
+			border-radius: 10px;
+			height: 150px;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			color: #818181;
+			font-size: 0.9em;
+			padding: 0.5em;
+		}
+
+		input {
+			margin-block: 5px;
+
+			&:focus-visible {
+				border: unset;
+				outline: 1px solid #17171742;
+			}
+			&.inputUserName,
+			&.inputEmail,
+			&.inputUserImage,
+			&.inputPassword {
+				border-radius: 10px;
+				border: none;
+				background-color: #efeeee;
+				padding: 10px;
+				width: 100%;
+			}
+
+			// &.inputPassword{
+			//   width: 250px;
+			//   margin: auto;
+			//   display: block;
+			// }
+		}
+	}
+
+	.conditions {
+		display: block;
+		position: relative;
+		margin-top: 5px;
+		cursor: pointer;
+		font-size: 0.9em;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		text-align: left;
+		padding-left: 32px;
+
+		.inputCheck {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 0;
+			width: 0;
+		}
+
+		.checkBg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 24px;
+			width: 24px;
+			border-radius: 5px;
+			border: 1px solid #17171742;
+		}
+
+		.checkBg:after {
+			content: "";
+			position: absolute;
+			display: none;
+			margin: 3px;
+			border: solid #de4b1e;
+			border-width: 8px;
+			border-radius: 2px;
+			transition: 0.2s;
+		}
+
+		input:checked ~ .checkBg:after {
+			display: block;
+		}
+	}
+
+	.divider {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		font-size: 0.8em;
+		margin-top: 20px;
+	}
+
+	.divider::after,
+	.divider::before {
+		content: "";
+		border: 0.5px solid #17171742;
+		flex: 1;
+	}
+
+	/* Space on left and right sides of text */
+	.divider:not(:empty)::before {
+		margin-right: 0.25em;
+	}
+
+	.divider:not(:empty)::after {
+		margin-left: 0.25em;
+	}
+
+	.googleAuth {
+		margin-top: 25px;
+		font-size: 0.9em;
+	}
+
+	.googleFill {
+		margin: 3.5px auto;
+		background: white;
+		padding: 2px;
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+		transition: 0.2s;
+
+		&:hover {
+			box-shadow: 2px 2px 20px 3px rgb(0 0 0 / 10%);
+		}
+
+		div {
+			margin: auto !important;
+			width: 100% !important;
+			height: 100% !important;
+
+			img {
+				margin: auto !important;
+			}
+		}
+	}
+
+	.createBtn {
+		margin-top: 20px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		font-weight: 600;
+		font-size: 1em;
+		color: #ffff;
+		background-color: #de4b1e;
+		padding: 8px 20px 8px 20px;
+		border: none;
+		border-radius: 0.6rem;
+	}
+}
+
+.important {
+	color: #de4b1e;
+}
+
+@media only screen and (max-width: 768px) {
+	.form {
+		margin: 2em auto;
+		// margin-top: 5%;
+		width: 85%;
+		text-align: center;
+
+		form {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+
+			div.formLeft,
+			div.formRight,
+			div.formBottom {
+				grid: unset;
+				width: 100%;
+			}
+
+			.imageArea {
+				background-color: #efeeee;
+				border: 2px dashed #17171742;
+				border-radius: 10px;
+				height: 150px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				color: #818181;
+				font-size: 0.9em;
+				padding: 0.5em;
+			}
+
+			input {
+				margin-block: 5px;
+
+				&:focus-visible {
+					border: unset;
+					outline: 1px solid #17171742;
+				}
+				&.inputUserName,
+				&.inputEmail,
+				&.inputUserImage,
+				&.inputPassword {
+					border-radius: 10px;
+					border: none;
+					background-color: #efeeee;
+					padding: 10px;
+					width: 100%;
+				}
+
+				// &.inputPassword{
+				//   width: 250px;
+				//   margin: auto;
+				//   display: block;
+				// }
+			}
+		}
+
+		.conditions {
+			display: block;
+			position: relative;
+			margin-top: 5px;
+			cursor: pointer;
+			font-size: 0.9em;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			text-align: left;
+			padding-left: 32px;
+
+			.inputCheck {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+			}
+
+			.checkBg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 24px;
+				width: 24px;
+				border-radius: 5px;
+				border: 1px solid #17171742;
+			}
+
+			.checkBg:after {
+				content: "";
+				position: absolute;
+				display: none;
+				margin: 3px;
+				border: solid #de4b1e;
+				border-width: 8px;
+				border-radius: 2px;
+				transition: 0.2s;
+			}
+
+			input:checked ~ .checkBg:after {
+				display: block;
+			}
+		}
+
+		.divider {
+			display: flex;
+			align-items: center;
+			text-align: center;
+			font-size: 0.8em;
+			margin-top: 20px;
+		}
+
+		.divider::after,
+		.divider::before {
+			content: "";
+			border: 0.5px solid #17171742;
+			flex: 1;
+		}
+
+		/* Space on left and right sides of text */
+		.divider:not(:empty)::before {
+			margin-right: 0.25em;
+		}
+
+		.divider:not(:empty)::after {
+			margin-left: 0.25em;
+		}
+
+		.googleAuth {
+			margin-top: 25px;
+			font-size: 0.9em;
+		}
+
+		.googleFill {
+			margin: 3.5px auto;
+			background: white;
+			padding: 2px;
+			width: 55px;
+			height: 55px;
+			border-radius: 50%;
+			transition: 0.2s;
+
+			&:hover {
+				box-shadow: 2px 2px 20px 3px rgb(0 0 0 / 10%);
+			}
+
+			div {
+				margin: auto !important;
+				width: 100% !important;
+				height: 100% !important;
+
+				img {
+					margin: auto !important;
+				}
+			}
+		}
+
+		.createBtn {
+			margin-top: 20px;
+			box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+			font-weight: 600;
+			font-size: 1em;
+			color: #ffff;
+			background-color: #de4b1e;
+			padding: 8px 20px 8px 20px;
+			border: none;
+			border-radius: 0.6rem;
+		}
+	}
+
+	.important {
+		color: #de4b1e;
+	}
+}
