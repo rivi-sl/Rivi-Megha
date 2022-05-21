@@ -1,129 +1,190 @@
+.wrapper{
+    width: 100%;
+    height: 100%;
+    padding: 0 15px 5px 5px;
+    position: relative;
+}
+
 .title{
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 0.9em;
+    letter-spacing: 1.5px;
     display: inline;
-    margin-left: auto;
+    text-transform: uppercase;
+    // z-index: 9999 !important;
+    color: #f8f8f8;
+    opacity: 0.5;
+    margin-top: 10px;
+    margin-left: 15px;
     margin-right: auto;
+}
+
+.profileCard{
+    width: 97.5%;
+    height: 130px;
+    position: absolute;
+    border-radius: 0.5em 0.5em 0 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    background-color: #DE4B1E;
+}
+
+.profileCard::before{
+    content: "";
+    position: absolute;
+    background-size:auto;
+    // background-position: /;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* z-index: 1; */
+    opacity: 0.05;
+    background-image: url("https://stupefied-meninsky-1b99f4.netlify.app/BackDrawingOriginal-withbg.eedd5bcd092c71ad6e80.png");
 }
 
 .profilePic{
-    display: inline;
-    margin-left: auto;
+    // display: inline;
+    // margin-left: auto;
+    margin-top: 25%;
+    box-sizing: unset;
     margin-right: auto;
-    height: 30%;
+    margin-left: 20px;
+    height: 20%;
+    max-height: 125px;
+    aspect-ratio: 1/1;
+    position: relative;
+    // padding: 3px;
+    border-radius: 10em;
+    overflow: hidden;
+    z-index: 2;
+    background-color: #fff;
+    padding: 7.5px;
+    // border: 7.5px solid #f8f8f8;
 }
 
 .profilePic:hover .edit_pic_icon{
-    display: inline;
+    opacity: 1;
+    transform: scale(1) translateX(-50%) translateY(-50%);
 }
 
 .UserProfilePic{
+    // border-radius: 0.9em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     border-radius: 10em;
     height: 100%;
-    width: auto;
-    margin-top: 5%;
-    border: 5px solid #DE4B1E;
+    aspect-ratio: 1/1;
+    // width: 100%;
+    // margin-top: 5%;
+    // border: 3px solid #DE4B1E;
     transition: border 0.3s;
     z-index: -1;
 }
 
 .edit_pic_icon{
-    background-color: #DE4B1E;
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    top: 33%;
-    right: 25%;
-    border-radius: 1rem;
-    display: none;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.5);
+    border-radius: 10rem;
+    display: grid;
+    opacity: 0;
+    transition: 0.1s ease-in-out;
+    place-items: center;
 }
 
-.profileName{
-    margin-top: 10%;
-    margin-bottom: 3%;
+.userDataSection{
+    margin-top: 15px;
+    padding-left: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.editName , .editBio{
-    padding-bottom: 1%;
-    border-bottom: 3px black solid;
-    margin-right: 40%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    display: none;
-    transition: 1s;
-}
-.name{
-    text-align: center;
-}
-.name span{
-    font-weight: 500;
-    font-size: 1.2em;
-}
-
-.edit_name_icon{
-    background-color: #DE4B1E;
-    position: absolute;
-    top: 40%;
-    right: 12%;
-    border-radius: 1rem;
-    display: none;
-    
-}
-
-.profileName:hover .edit_name_icon{
-    display: inline;
-}
-
-.profileName:hover .editName{
-    display: block;
+.userDataSet{
+    width: 100%;
+    &:hover .divider{
+        margin-left: calc(100% - 25px);
+    }
+    &:hover .divider span{
+        opacity: 1;
+        top: 7.5px;
+        transition-delay: 0.4s;
+        cursor: pointer;
+    }
 }
 
 
-.profileBio{
-    margin-top: 3%;
-    margin-right: 3%;
+.nameTitle,.bioTitle{
+    font-weight: 700;
+    font-size:0.65em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #3E4445;
+}
+
+.bioTitle{
+    margin-top: 20px;
+}
+
+.name,.bio{
+    font-weight: 300;
+    font-size:0.9em;
 }
 
 .bio{
-    background-color: #F4E8E0;
-    border-radius: 10rem;
-    padding: 2%;
-    text-align: center;
-
-    
+    font-size:0.9em;
 }
 
-.bio span{
-    font-weight: 400;
-    font-size: 1em;
+.divider{
+    width: 25px;
+    height: 3px;
+    background-color: #3E4445;
+    margin-bottom: 5px;
+    transition: margin-left 0.1s ease-in-out 0.25s;
+    position: relative;
 }
 
-.edit_bio_icon{
-    background-color: #DE4B1E;
+.divider span{
+    opacity: 0;
+    transition: 0.25s ease-in-out;
+    transition-delay: 0s;
     position: absolute;
-    top: 48%;
-    right: 10%;
-    border-radius: 1rem;
-    display: none;   
-}
-
-.profileBio:hover .edit_bio_icon{
-    display: inline;
-}
-
-.profileBio:hover .editBio{
-    display: block;
+    top: 0px;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .logout{
-    margin-top: 15%;
-}
+    margin-top: 30px;
+} 
 
 .logoutBtn{
-    margin-left: 36%;
+    // margin-left: 36%;
+    width: 100%;
     font-weight: 600;
-    font-size: 1.2em;
+    letter-spacing:1.25px;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    // color: #F4E8E0;
+    color: #DE4B1E;
+    background-color: transparent;
+    padding: 5px 7.5px;
+    border: 1.5px solid #DE4B1E;
+    border-radius: 0.25rem;
+    transition: 0.1s ease-in-out;
+}
+
+.logoutBtn:hover{
     color: #F4E8E0;
     background-color: #DE4B1E;
-    padding: 10px;
-    border: none;
-    border-radius: 0.6rem;
 }

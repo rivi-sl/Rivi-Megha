@@ -38,6 +38,8 @@ html,body,#root{
 .Appbar{
   width: 30%;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
   background-color: #f8f8f8;
   border-radius: 1em 0 0 1em;
   padding: 1rem 0 1rem 1rem;

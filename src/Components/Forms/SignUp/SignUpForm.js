@@ -1,41 +1,30 @@
 import * as styles from "./scss/All.module.scss";
 import Rivicon from "../../Icons/Rivicon";
+import { useContext } from "react";
+import Rivi from "../../../Rivi.Context";
 import React from 'react'
 import axios from 'axios'
+import { useAuth } from "../../../utilities/Auth.Context";
 
-const SignupForm = () => {
+const SignUpForm = () => {
+
+    const { setislogged } = useContext(Rivi);
 
     const [email,setEmail] = React.useState('')
     const [username,setUsername] = React.useState('')
     const [password,setPassword] = React.useState('')
     const [mobile,setMobile] = React.useState('')
 
-    function handleSubmit(event){
+    const {signup} = useAuth()
+
+    async function handleSubmit(event){
         event.preventDefault()
-        const reqObj = {
-            username:username,
-            email:email,
-            password:password,
-            mobile:mobile
+        try{
+            signup(username,email,password,mobile)
+            setislogged(true)
+        }catch(err){
+            console.log(err)
         }
-
-        let axiosConfig = {
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		};
-
-		axios.post('http://localhost:8080/api/v1/user/signup', reqObj, axiosConfig)
-			.then((res) => {
-				if(res.data.success === false){
-                    alert(res.data.message)
-                }else{
-                    alert(res.data.message)
-                }
-			})
-			.catch((err) => {
-				console.log("AXIOS ERROR: ", err);
-			})
     }
 
     function handleChangeEmail(event){
@@ -91,4 +80,4 @@ const SignupForm = () => {
 	);
 };
 
-export default SignupForm;
+export default SignUpForm;
