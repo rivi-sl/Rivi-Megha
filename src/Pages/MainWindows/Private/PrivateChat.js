@@ -6,13 +6,13 @@ import PrivateChatComponent from '../../../Components/MainWindowComponents/Priva
 import ProfileInfo from '../../../Components/MainWindowComponents/Private/ProfileInfo'
 import PrivateImageViewer from './PrivateChatImageViewer.Context'
 import ImageViewer from '../../../Components/MainWindowComponents/Private/ImageViewer'
-import Rivi from '../../../Rivi.Context'
+import { useRivi } from '../../../Rivi.Context'
 
 const PrivateChat = () => {
 
     const [active, setActive] = useState(false)
     const [imageUrl, setImageUrl] = useState('')
-    const { selectedPrivateChat, setSelectedPrivateChat } = useContext(Rivi)
+    const { selectedPrivateChat, setSelectedPrivateChat } = useRivi()
 
     // const [loadedData,setLoadedData] = useState(false)
     const chatWindow = useRef(0)
@@ -23,6 +23,11 @@ const PrivateChat = () => {
     }
 
     const imageProvider = { active, setActive, imageUrl, setImageUrl}
+
+    if(selectedPrivateChat===null){
+        return null
+    }
+
     // console.log(dummyProfile.photos)
     return (
         <PrivateImageViewer.Provider value={imageProvider}>

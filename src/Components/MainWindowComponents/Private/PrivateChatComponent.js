@@ -9,13 +9,13 @@ import VoiceMessageOut from './VoiceMessageOut'
 import NewDateDivider from './NewDateDivider'
 import Rivicon from '../../Icons/Rivicon'
 import moment from 'moment'
-import Rivi from '../../../Rivi.Context'
+import Rivi, { useRivi } from '../../../Rivi.Context'
 
 export const PrivateChatComponent = (props) => {
     const {messages,chatWindow} = props
     const divRef = useRef(null);
     const [btnVisible,setButtonVisible] = useState(false)
-    const {userData} = useContext(Rivi)
+    const {userData} = useRivi()
     // useEffect(()=>{divRef.current.scrollIntoView();},[])
         // chatWindow.addEventListener('scroll',()=>{
         //     if(chatWindow.scrollHeight - chatWindow.scrollTop-100 <= chatWindow.clientHeight){
