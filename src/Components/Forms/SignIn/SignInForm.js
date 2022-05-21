@@ -1,13 +1,13 @@
 import * as styles from "./scss/All.module.scss";
 import { useContext } from "react";
-import Rivi from "../../../Rivi.Context";
+import { useRivi } from "../../../Rivi.Context";
 import Rivicon from "../../Icons/Rivicon";
 import React from 'react';
 import axios from 'axios';
 import { useAuth } from "../../../utilities/Auth.Context";
 
 const SignInForm = () => {
-	const { setislogged } = useContext(Rivi);
+	const { setislogged } = useRivi();
 	const [email,setEmail] = React.useState('')
 	const [password,setPassword] = React.useState('')
 	const [response,setResponse] = React.useState('')

@@ -3,12 +3,12 @@ import *  as styles from './scss/All.module.scss'
 import '../../Components/Icons/Icons.module.css'
 import Rivicon from '../../Components/Icons/Rivicon'
 import {Link} from 'react-router-dom'
-import Rivi from '../../Rivi.Context'
+import { useRivi } from '../../Rivi.Context'
 
 
 const Navigation = () => {
     const [window , triggerWindow] = useState('profile')
-    const { state, setState} = useContext(Rivi)
+    const { state, setState} = useRivi()
 
     return (
         <div className={styles.navigationBar}>

@@ -1,14 +1,14 @@
 import * as styles from "./scss/All.module.scss";
 import Rivicon from "../../Icons/Rivicon";
 import { useContext } from "react";
-import Rivi from "../../../Rivi.Context";
+import { useRivi } from "../../../Rivi.Context";
 import React from 'react'
 import axios from 'axios'
 import { useAuth } from "../../../utilities/Auth.Context";
 
 const SignUpForm = () => {
 
-    const { setislogged } = useContext(Rivi);
+    const { setislogged } = useRivi();
 
     const [email,setEmail] = React.useState('')
     const [username,setUsername] = React.useState('')

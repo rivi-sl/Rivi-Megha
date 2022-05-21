@@ -1,12 +1,12 @@
 import * as styles from './scss/All.module.scss'
 import {useContext, useEffect, useState ,Fragment} from 'react'
-import Rivi from '../../../Rivi.Context'
+import { useRivi } from '../../../Rivi.Context'
 import Rivicon from '../../../Components/Icons/Rivicon'
 import { useAuth } from '../../../utilities/Auth.Context'
 
 
 const ProfileSideWindow = () => {
-    const {userData , setislogged} = useContext(Rivi)
+    const {userData , setislogged} = useRivi()
 
     const { currentUser, logout } = useAuth()
 

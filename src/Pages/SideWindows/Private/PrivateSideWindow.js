@@ -3,13 +3,13 @@ import * as styles from './scss/All.module.scss'
 import Rivicon  from '../../../Components/Icons/Rivicon'
 import PrivateContactList from '../../../Components/SubWindowComponents/Private/PrivateContactList'
 import PrivateContactListOnline from '../../../Components/SubWindowComponents/Private/PrivateContactListOnline'
-import Rivi from '../../../Rivi.Context'
+import { useRivi } from '../../../Rivi.Context'
 import {ContactDataExplorer,ContactDataReciever} from './Functions/ContactData.Explorer'
 
 const PrivateSideWindow = () => {
     const [tab,toggleTab] = useState('allCon')
     const [changeChat,triggerChangeChat] = useState(null)
-    const { setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useContext(Rivi)
+    const { setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useRivi()
     useEffect(() => {
         setSelectedPrivateChat(null)
         setTimeout(()=>{
