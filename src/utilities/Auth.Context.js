@@ -65,7 +65,9 @@ export const AuthProvider = ({children}) => {
 				if(res.data.success === false){
                     alert(res.data.message)
                 }else{
-                    alert(res.data.message)
+                    // alert(res.data.message)
+                    setIsLogged(true)
+                    setCurrentUser(res.data.user)
                 }
 			})
 			.catch((err) => {
