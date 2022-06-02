@@ -132,3 +132,10 @@ g#Petals, path#IconBG{
   transform: scale(0.9);
   transition: 0.25s;  
 }
+
+@media (max-width: 575.98px) { 
+  #root{
+    padding: 0;
+  }
+
+ }

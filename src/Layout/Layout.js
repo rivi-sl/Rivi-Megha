@@ -9,7 +9,7 @@ const Layout = ({subWindow,mainWindow}) => {
     const {currentUser} = useAuth()
 
     if (!currentUser) {
-        return <Navigate to="/sign_up" replace />;
+        return <Navigate to="/sign_in" replace />;
       }
     
 
