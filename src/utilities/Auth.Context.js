@@ -25,7 +25,7 @@ export const AuthProvider = ({children}) => {
 			}
 		};
 
-		axios.post('http://localhost:8080/api/v1/user/signin', reqObject, axiosConfig)
+		axios.post('https://rivi-k-backend.herokuapp.com/api/v1/user/signin', reqObject, axiosConfig)
 			.then((res) => {
 				if(res.data.success === true){
 					setIsLogged(true)
@@ -60,12 +60,14 @@ export const AuthProvider = ({children}) => {
 			}
 		};
 
-		axios.post('http://localhost:8080/api/v1/user/signup', reqObj, axiosConfig)
+		axios.post('https://rivi-k-backend.herokuapp.com/api/v1/user/signup', reqObj, axiosConfig)
 			.then((res) => {
 				if(res.data.success === false){
                     alert(res.data.message)
                 }else{
-                    alert(res.data.message)
+                    // alert(res.data.message)
+                    setIsLogged(true)
+                    setCurrentUser(res.data.user)
                 }
 			})
 			.catch((err) => {
