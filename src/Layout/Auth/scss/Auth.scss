@@ -61,8 +61,8 @@
 	// min-width: 360px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 576px) {
 	.authWindow {
-		// overflow: scroll;
+		border-radius: 0;
 	}
 }
