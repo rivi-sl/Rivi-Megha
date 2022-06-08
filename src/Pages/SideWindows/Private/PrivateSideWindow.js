@@ -10,6 +10,19 @@ const PrivateSideWindow = () => {
     const [tab,toggleTab] = useState('allCon')
     const [changeChat,triggerChangeChat] = useState(null)
     const { setSelectedPrivateChat, privateContactList ,setPrivateContactList } = useRivi()
+    
+    const ToggleWindow = () => {
+        const Appbar = document.getElementById("Appbar")
+        const Appbody = document.getElementById("Appbody")
+        Appbody.style.transition = "0.3s"
+        setTimeout(function(){
+            Appbar.classList.add("collapse")
+            Appbody.style.opacity = "1"
+            
+        },200)
+    }
+
+
     useEffect(() => {
         setSelectedPrivateChat(null)
         setTimeout(()=>{
@@ -33,9 +46,9 @@ const PrivateSideWindow = () => {
                 <span onClick={()=>{toggleTab('onlineChat')}} className={tab==='onlineChat' ? styles.tabTitle_selected : styles.tabTitle}>Online Contacts</span>
             </div>
             {tab==='allCon'? 
-            <PrivateContactList chatData={privateContactList} triggerChangeChat={triggerChangeChat} />
+            <PrivateContactList chatData={privateContactList} triggerChangeChat={triggerChangeChat} toggleWindow={ToggleWindow}/>
             :
-            <PrivateContactListOnline chatData={privateContactList} triggerChangeChat={triggerChangeChat} />
+            <PrivateContactListOnline chatData={privateContactList} triggerChangeChat={triggerChangeChat} toggleWindow={ToggleWindow}/>
         }
             <div className={styles.newChatButton}>
                 <Rivicon i='NewChatStyleIcon' s='22' mt={0} nav={false} selected={false} /> 

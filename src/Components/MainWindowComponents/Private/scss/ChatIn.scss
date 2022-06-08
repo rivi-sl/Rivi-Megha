@@ -37,3 +37,9 @@
     font-weight: 300 !important;
     /* align-self: flex-end; */
 }
+
+@media (max-width: 575.98px) { 
+    .chatInBox,.chatInBoxWO{
+        max-width: 85%;
+    }
+ }

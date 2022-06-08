@@ -15,13 +15,13 @@ const Layout = ({subWindow,mainWindow}) => {
 
   return (
     <>
-        <section className="Appbar">
+        <section className="Appbar" id="Appbar">
             <Navigation />
             <Tabs>
                 {subWindow}
             </Tabs>
         </section>
-        <section className="Appbody">
+        <section className="Appbody" id="Appbody">
             <MainWindow>
                 {mainWindow}
             </MainWindow>

@@ -17,6 +17,7 @@ const PrivateContactListOnline = (props) => {
                         onClick={()=>{
                             setSelectedChat(chat.id)
                             triggerChangeChat(chat.id)
+                            props.toggleWindow()
                             }}>
                             <PrivateContact selected={selectedChat===chat.id} name={chat.name} profile={chat.profilePic} timeStamp={chat.timeStamp} lastSMS={chat.lastSMS} online={chat.online} unread={chat.unreadMessages} />
                         </div>

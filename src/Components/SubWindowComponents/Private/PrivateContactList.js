@@ -9,6 +9,8 @@ const PrivateContactList = (props) => {
     const {chatData,triggerChangeChat} = props
     const [selectedChat,setSelectedChat] = useState(1)
     // const { selectedPrivateChat, setSelectedPrivateChat } = useContext(Rivi)
+
+    
     return (
         <div className={styles.privateContactList}>
             <div className={styles.contactList}>
@@ -19,6 +21,7 @@ const PrivateContactList = (props) => {
                         onClick={()=>{
                             setSelectedChat(chat.id)
                             triggerChangeChat(chat.id)
+                            props.toggleWindow()
                             navigate(`/private/${chat.name}`)
                             }}>
                             <PrivateContact selected={selectedChat===chat.id} name={chat.name} profile={chat.profilePic} timeStamp={chat.timeStamp} lastSMS={chat.lastSMS} online={chat.online} unread={chat.unreadMessages} />

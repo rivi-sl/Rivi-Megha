@@ -35,3 +35,9 @@
     left: 100%;
     top: 0%;
 }
+
+@media (max-width: 575.98px) { 
+    .chatOutBox,.chatOutBoxWO{
+        max-width: 85%;
+    }
+ }
