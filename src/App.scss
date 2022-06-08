@@ -133,9 +133,24 @@ g#Petals, path#IconBG{
   transition: 0.25s;  
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width:  767.98px) { 
   #root{
     padding: 0;
   }
 
+  .Appbar{
+    transition: 0.3s;
+    border-radius: 0;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+  }
+  .Appbody{
+    border-radius: 0;
+  }
+
+  .collapse{
+    transform: translateX(-100%);
+  }
  }

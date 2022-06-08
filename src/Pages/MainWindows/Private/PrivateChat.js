@@ -7,6 +7,7 @@ import ProfileInfo from '../../../Components/MainWindowComponents/Private/Profil
 import PrivateImageViewer from './PrivateChatImageViewer.Context'
 import ImageViewer from '../../../Components/MainWindowComponents/Private/ImageViewer'
 import { useRivi } from '../../../Rivi.Context'
+import Rivicon from '../../../Components/Icons/Rivicon'
 
 const PrivateChat = () => {
 
@@ -17,15 +18,18 @@ const PrivateChat = () => {
     // const [loadedData,setLoadedData] = useState(false)
     const chatWindow = useRef(0)
 
-    const handleToggleProfile = () => {
-        const profileInfoSection = document.getElementById("profileInfoSection")
-        profileInfoSection.style.display = "flex"
-    }
-
     const imageProvider = { active, setActive, imageUrl, setImageUrl}
 
     if(selectedPrivateChat===null){
         return null
+    }
+
+    const ToggleWindow = () => {
+        const Appbar = document.getElementById("Appbar")
+        const Appbody = document.getElementById("Appbody")
+        Appbar.classList.remove("collapse")
+        Appbody.style.opacity = "0"
+        Appbody.style.transition = "1s"
     }
 
     // console.log(dummyProfile.photos)
@@ -37,7 +41,10 @@ const PrivateChat = () => {
         <div className={styles.privateChatMain} id="privateChatMain">
             <ProfileInfo profileInfo={selectedPrivateChat} />
             <div className={styles.chatWindowPanel} id="chatWindowPanel">
-                <div className={styles.header} onClick={()=>{handleToggleProfile()}}>
+                <div className={styles.header} >
+                    <span className={styles.back} onClick={()=>{ToggleWindow()}}>
+                        <Rivicon i='ReturnIcon' s='30' mt={0} nav={false} selected={false} style={{cursor: 'pointer'}} />
+                    </span>
                     <Header profilePic={selectedPrivateChat.profilePic} name={selectedPrivateChat.name} online={selectedPrivateChat.online} about={selectedPrivateChat.about} />
                 </div>
                 <div className={styles.chatWindow} ref={chatWindow}>
