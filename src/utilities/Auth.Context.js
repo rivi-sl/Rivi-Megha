@@ -25,12 +25,12 @@ export const AuthProvider = ({children}) => {
 			}
 		};
 
-		axios.post('https://rivi-k-backend.herokuapp.com/api/v1/user/signin', reqObject, axiosConfig)
+		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signin', reqObject, axiosConfig)
 			.then((res) => {
 				if(res.data.success === true){
 					setIsLogged(true)
-                    setCurrentUser(res.data.userData)
-                    console.log(res.data.userData)
+                    setCurrentUser(res.data)
+                    console.log(res.data)
 				}else if(res.data.message === 'Invalid email'){
 					//make the err message
 					alert('Invalid email')		
@@ -60,7 +60,7 @@ export const AuthProvider = ({children}) => {
 			}
 		};
 
-		axios.post('https://rivi-k-backend.herokuapp.com/api/v1/user/signup', reqObj, axiosConfig)
+		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signup', reqObj, axiosConfig)
 			.then((res) => {
 				if(res.data.success === false){
                     alert(res.data.message)
