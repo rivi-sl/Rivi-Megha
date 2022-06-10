@@ -10,8 +10,24 @@ const Navigation = () => {
     const [window , triggerWindow] = useState('profile')
     const { state, setState} = useRivi()
 
+    const toggleNav = () => {
+        const navigation = document.getElementById('navigation')
+        const tabs = document.getElementById('tabs')
+        navigation.style.left = '0.9em'
+        tabs.style.opacity = '0.7'
+        const children = tabs.children
+            for (let i = 0; i < children.length; i++) {
+                children[i].style.pointerEvents = "none"
+            }
+    }
+
     return (
-        <div className={styles.navigationBar}>
+        <>
+        <div className={styles.navToggle} onClick={()=>{toggleNav()}}>
+            <span className={styles.toggler} ></span>
+        </div>
+
+        <div className={styles.navigationBar} id="navigation">
             <section className={styles.profile}>
                 <span onClick={()=>{triggerWindow('profile')}}>
                     <Link to="/profile">
@@ -42,6 +58,7 @@ const Navigation = () => {
             </section>
 
         </div>
+        </>
     )
 }
 

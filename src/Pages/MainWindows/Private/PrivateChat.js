@@ -28,8 +28,9 @@ const PrivateChat = () => {
         const Appbar = document.getElementById("Appbar")
         const Appbody = document.getElementById("Appbody")
         Appbar.classList.remove("collapse")
-        Appbody.style.opacity = "0"
-        Appbody.style.transition = "1s"
+        Appbody.style.opacity = "0.5"
+        Appbody.style.transition = "0.4s"
+        Appbody.style.pointerEvents = "none"
     }
 
     // console.log(dummyProfile.photos)

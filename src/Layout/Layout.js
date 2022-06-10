@@ -17,6 +17,7 @@ const Layout = ({subWindow,mainWindow}) => {
     <>
         <section className="Appbar" id="Appbar">
             <Navigation />
+            
             <Tabs>
                 {subWindow}
             </Tabs>

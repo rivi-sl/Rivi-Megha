@@ -1,6 +1,6 @@
 .navigationBar{
     /* width: 18%; */
-    /* min-width: 15px; */
+    min-width: 60px;
     height: 100%;
     background-color: #DE4B1E;
     border-radius: 0.9em;
@@ -22,3 +22,57 @@
     align-items: center;
 }
 
+@media (max-width: 370px) { 
+    .navigationBar{
+       position: absolute;
+       z-index: 1;
+       height: 98%;
+       transition: 0.3s;
+       left: -50%;
+    }
+    .navToggle{
+        height: 100%;
+        width: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .toggler{
+            width: 0.3rem;
+            background-color: #DE4B1E;
+            height: 20%;
+            border-radius: 10px;
+        }
+    }
+    
+ }
+
+ @media (min-width: 370px) { 
+     .navToggle{
+         display: none;
+     }
+ }
+
+ @media (min-width: 768px) and (max-width: 991.98px) {
+    .navigationBar{
+        position: absolute;
+        z-index: 1;
+        height: 95%;
+        transition: 0.3s;
+        left: -50%;
+     }
+     .navToggle{
+         height: 100%;
+         width: 0.4em;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+ 
+         .toggler{
+             width: 0.3em;
+             background-color: #DE4B1E;
+             height: 20%;
+             border-radius: 10px;
+         }
+     }
+ }
