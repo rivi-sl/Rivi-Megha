@@ -67,13 +67,13 @@ export const ChatIn = (props) => {
           <div>
             <span className={styles.metaTitle}>
               {_.truncate(metaData.title, {
-                // length: 20,
+                length: 20,
                 omission: "...",
               })}
             </span>
             <span className={styles.metaDescription}>
               {_.truncate(metaData.desc, {
-                // length: '50',
+                length: '50',
                 omission: "...",
               })}
             </span>

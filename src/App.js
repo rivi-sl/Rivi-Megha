@@ -14,19 +14,19 @@ function App() {
 
   return (
     <RiviProvider>
-      {/* <AuthProvider> */}
+      <AuthProvider>
       <Router>
       <div className="App">
             <Routes>
-                {/* <Route path={"/profile"} element={<Layout subWindow={<ProfileSideWindow />} mainWindow={null} />} /> */}
+                <Route path={"/profile"} element={<Layout subWindow={<ProfileSideWindow />} mainWindow={null} />} />
                 <Route path={"/private/*"} element={<Layout subWindow={<PrivateSideWindow />} mainWindow={<PrivateChat />} />} />
-                {/* <Route path = "/sign_in" element={<AuthLayout page={<SignIn/>} />} />
-                <Route path = "/sign_up" element={<AuthLayout page={<SignUp/>} />} /> */}
-                {/* <Route path = "*" element={<Navigate to="/sign_in"/>} /> */}
+                <Route path = "/sign_in" element={<AuthLayout page={<SignIn/>} />} />
+                <Route path = "/sign_up" element={<AuthLayout page={<SignUp/>} />} />
+                <Route path = "*" element={<Navigate to="/sign_in"/>} />
             </Routes>
       </div>
   </Router> 
-  {/* </AuthProvider> */}
+  </AuthProvider>
   </RiviProvider>
   );
 } 
