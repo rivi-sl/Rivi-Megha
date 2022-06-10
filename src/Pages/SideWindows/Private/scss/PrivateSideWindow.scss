@@ -90,3 +90,16 @@
     right: 1.5em;
     bottom: 1.5em;
 }
+@media (max-width: 290px) { 
+    .title{
+        font-weight: 700;
+        font-size: 1.1em;
+    } 
+    .tabTitle{
+        font-size: 0.8em;
+    }
+    .tabTitle_selected{
+        font-size: 0.8em;
+    }
+   
+ }

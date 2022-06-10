@@ -6,17 +6,18 @@ import Navigation from './SideWindow/Navigation'
 import Tabs from './SideWindow/Tabs'
 
 const Layout = ({subWindow,mainWindow}) => {
-    const {currentUser} = useAuth()
+    // const {currentUser} = useAuth()
 
-    if (!currentUser) {
-        return <Navigate to="/sign_in" replace />;
-      }
+    // if (!currentUser) {
+    //     return <Navigate to="/sign_in" replace />;
+    //   }
     
 
   return (
     <>
         <section className="Appbar" id="Appbar">
             <Navigation />
+            
             <Tabs>
                 {subWindow}
             </Tabs>

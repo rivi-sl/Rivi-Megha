@@ -61,26 +61,26 @@ export const ChatIn = (props) => {
     return (
         <div className={lastUser ? styles.chatInBoxWO : styles.chatInBox}>
            <span><Linkify componentDecorator={hrefDecorator}>{message}</Linkify></span>
-            <span className={styles.timeStampIn}>{moment(timeStamp).format('LT')}</span>
             {metaTagState ? (
         <div className={styles.metaInfoSection} onClick={()=>{if(metaData.link!==''){window.open(metaData.link,'_blank')}}}>
           <img src={metaData.imgLink} alt="imagePreloader" />
           <div>
             <span className={styles.metaTitle}>
               {_.truncate(metaData.title, {
-                length: 20,
+                // length: 20,
                 omission: "...",
               })}
             </span>
             <span className={styles.metaDescription}>
               {_.truncate(metaData.desc, {
-                length: 50,
+                // length: '50',
                 omission: "...",
               })}
             </span>
           </div>
         </div>
       ) : null}
+      <span className={styles.timeStampIn}>{moment(timeStamp).format('LT')}</span>
         </div>
     )
 }

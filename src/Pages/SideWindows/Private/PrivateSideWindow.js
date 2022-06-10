@@ -18,6 +18,7 @@ const PrivateSideWindow = () => {
         setTimeout(function(){
             Appbar.classList.add("collapse")
             Appbody.style.opacity = "1"
+            Appbody.style.pointerEvents = "auto"
             
         },200)
     }

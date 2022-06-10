@@ -106,3 +106,9 @@
     /* font-size: 0.7em;  */
     font-size: clamp(0.5rem, 2.5vh, 0.75rem); 
 }
+
+@media (max-width: 370px) { 
+    .about{
+        display: none;
+    }
+ }

@@ -59,7 +59,6 @@ export const ChatOut = (props) => {
       <span>
         <Linkify componentDecorator={hrefDecorator}>{message}</Linkify>
       </span>
-      <span className={styles.timeStamp}>{moment(timeStamp).format("LT")}</span>
       {metaTagState ? (
         <div className={styles.metaInfoSection} onClick={()=>{if(metaData.link!==''){window.open(metaData.link,'_blank')}}}>
           <img src={metaData.imgLink} alt="imagePreloader" />
@@ -79,6 +78,7 @@ export const ChatOut = (props) => {
           </div>
         </div>
       ) : null}
+      <span className={styles.timeStamp}>{moment(timeStamp).format("LT")}</span>
     </div>
   );
 };
