@@ -1,6 +1,6 @@
 import * as styles from "./scss/All.module.scss";
 import { useNavigate } from "react-router-dom";
-import SignUpForm from "../../Components/Forms/SignUp/SignUpForm";
+import SignUpForm from "../../Components/forms/signup/SignUpForm";
 
 const SignUp = () => {
 	const navigate = useNavigate();

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { useRivi } from '../Rivi.Context'
 
 const AuthContext = createContext()
 
@@ -12,6 +13,8 @@ export const AuthProvider = ({children}) => {
     const [isLogged,setIsLogged] = useState(false)
     const [currentUser, setCurrentUser] = useState()
     const [loading,setLoading] = useState(true)
+
+    const {riviToasteer} = useRivi()
 
     function login(email,password) {
         setLoading(true)
@@ -30,14 +33,26 @@ export const AuthProvider = ({children}) => {
 				if(res.data.success === true){
 					setIsLogged(true)
                     setCurrentUser(res.data)
+                    riviToasteer({
+                        type:"success",
+                        message:"Login Successful",
+                    })
                     console.log(res.data)
 				}else if(res.data.message === 'Invalid email'){
 					//make the err message
-					alert('Invalid email')		
+					// alert('Invalid email')		
+                    riviToasteer({
+                        type:"danger",
+                        message:"User not found! Sign up if you don't gave an account.",
+                    })
 				}	
 				else if(res.data.message === 'Invalid password'){
 					//make the err message
-					alert('Invalid password')
+					// alert('Invalid password')
+                    riviToasteer({
+                        type:"danger",
+                        message:"Wrong Password! Please try again.",
+                    })
 				}
 			})
 			.catch((err) => {
