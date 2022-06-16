@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useAuth } from "../../../utilities/Auth.Context";
 
 const SignInForm = () => {
-	const { setislogged } = useRivi();
+	const { setislogged, riviToasteer } = useRivi();
 	const [email,setEmail] = React.useState('')
 	const [password,setPassword] = React.useState('')
 	const [response,setResponse] = React.useState('')
@@ -81,7 +81,7 @@ const SignInForm = () => {
 			<span className={styles.divider}>OR</span>
 			<div className={styles.googleAuth}>
 				<span>Login with</span>
-				<div className={styles.googleLogin}>
+				<div className={styles.googleLogin} onClick={()=>{riviToasteer({type:"warning",message:"Google Login Unavailabe"})}}>
 					<Rivicon i="GoogleIcon" s="45" mt={20} selected={false} nav={false} />
 				</div>
 			</div>

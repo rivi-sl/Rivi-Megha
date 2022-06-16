@@ -1,0 +1,40 @@
+$success: #198754;
+$danger: #d21f3c;
+$warning: #ffbf00;
+
+.toast{
+    width: fit-content;
+    max-width: 300px;
+    padding: 10px 20px;
+    min-height: 50px;
+    border-radius: .25em;
+    background-color: #fff;
+    color: #222;
+    font-size: 0.9em;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    z-index: 100;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%);
+    border: 1px solid #ddd;
+    transform: translateX(250%);
+    transition: transform 0.5s cubic-bezier(0.23, 0.82, 0.16, 1.46);
+    border-left: 5px solid $success;
+    // .loadBar{
+    //     height: 100%;
+    //     width: 5px;
+    //     background-color: $success;
+    //     position: absolute;
+    //     left: 0px;
+    //     top: 0px;
+    //     transition: 0.25s ease;
+    // }
+}
+
+.showToast{
+    transform: translateX(0);
+}

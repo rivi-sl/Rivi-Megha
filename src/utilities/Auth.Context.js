@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { useRivi } from '../Rivi.Context'
 
 const AuthContext = createContext()
 
@@ -13,6 +14,8 @@ export const AuthProvider = ({children}) => {
     const [currentUser, setCurrentUser] = useState()
     const [loading,setLoading] = useState(true)
     const [token,setToken] = useState('')
+
+    const {riviToasteer} = useRivi()
 
     function login(email,password) {
         setLoading(true)
@@ -29,16 +32,34 @@ export const AuthProvider = ({children}) => {
 		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signin', reqObject, axiosConfig)
 			.then((res) => {
 				if(res.data.success === true){
+<<<<<<< HEAD
                     setToken(res.data.token)
 					// setIsLogged(true)
                     // setCurrentUser(res.data)
+=======
+					setIsLogged(true)
+                    setCurrentUser(res.data)
+                    riviToasteer({
+                        type:"success",
+                        message:"Login Successful",
+                    })
+                    console.log(res.data)
+>>>>>>> 2938b8c95b69718aa4b11d97188d20d5003de48f
 				}else if(res.data.message === 'Invalid email'){
 					//make the err message
-					alert('Invalid email')		
+					// alert('Invalid email')		
+                    riviToasteer({
+                        type:"danger",
+                        message:"User not found! Sign up if you don't gave an account.",
+                    })
 				}	
 				else if(res.data.message === 'Invalid password'){
 					//make the err message
-					alert('Invalid password')
+					// alert('Invalid password')
+                    riviToasteer({
+                        type:"danger",
+                        message:"Wrong Password! Please try again.",
+                    })
 				}
 			})
 			.catch((err) => {
