@@ -32,19 +32,25 @@ export const AuthProvider = ({children}) => {
 		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signin', reqObject, axiosConfig)
 			.then((res) => {
 				if(res.data.success === true){
-<<<<<<< HEAD
                     setToken(res.data.token)
 					// setIsLogged(true)
                     // setCurrentUser(res.data)
-=======
-					setIsLogged(true)
-                    setCurrentUser(res.data)
-                    riviToasteer({
-                        type:"success",
-                        message:"Login Successful",
-                    })
-                    console.log(res.data)
->>>>>>> 2938b8c95b69718aa4b11d97188d20d5003de48f
+                    axios.get(`https://rivi-test-backend.herokuapp.com/api/v1/user/getUser?token=${token}`, axiosConfig)
+                        .then((res) => {
+                            if(res.data.success === false){
+                                alert(res.data.message)
+                            }else{
+                                riviToasteer({
+                                    type:"success",
+                                    message:"Login Successful",
+                                })
+                                setCurrentUser(res.data.user)
+                                setIsLogged(true)
+                            }
+                        })
+                        .catch((err) => {
+                            console.log("AXIOS ERROR: ", err);
+                        }) 
 				}else if(res.data.message === 'Invalid email'){
 					//make the err message
 					// alert('Invalid email')		
@@ -66,18 +72,7 @@ export const AuthProvider = ({children}) => {
 				console.log("AXIOS ERROR: ", err);
 			})
 
-        axios.get(`https://rivi-test-backend.herokuapp.com/api/v1/user/getUser?token=${token}`, axiosConfig)
-            .then((res) => {
-                if(res.data.success === false){
-                    alert(res.data.message)
-                }else{
-                    setCurrentUser(res.data.user)
-                    setIsLogged(true)
-                }
-            })
-            .catch((err) => {
-                console.log("AXIOS ERROR: ", err);
-            })    
+           
 
         setLoading(false)
     }
@@ -99,10 +94,10 @@ export const AuthProvider = ({children}) => {
         //https://rivi-test-backend.herokuapp.com/api/v1/user/signup
 		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signup', reqObj, axiosConfig)
 			.then((res) => {
-				if(res.success === false){
-                    alert(res.message)
+				if(res.data.success === false){
+                    alert(res.data.message)
                 }else{
-                    // alert(res.data.message)
+                    alert(res.data.message)
                 }
 			})
 			.catch((err) => {
