@@ -3,7 +3,7 @@
     width: fit-content;
     padding: 5px 5px;
     margin-bottom: 10px;
-    background-color: #fff;
+    background-color: var(--chatIn);
     position: relative;
     border-radius: 0 0.75em 0.75em 0.75em;
     display: flex;
@@ -14,8 +14,8 @@
     content: '';
     position: absolute;
     border: .5em solid transparent;
-    border-top-color: #fff;
-    border-right-color: #fff;
+    border-top-color: var(--chatIn);
+    border-right-color: var(--chatIn);
     right: 100%;
     top: 0%;
 }
