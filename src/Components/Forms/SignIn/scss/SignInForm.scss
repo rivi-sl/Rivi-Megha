@@ -41,6 +41,7 @@
 		padding: 8px 20px 8px 20px;
 		border: none;
 		border-radius: 0.6rem;
+		cursor: pointer;
 	}
 
 	.divider {
@@ -80,6 +81,7 @@
 		height: 55px;
 		border-radius: 50%;
 		transition: 0.2s;
+		cursor: pointer;
 
 		&:hover {
 			box-shadow: 2px 2px 20px 3px rgb(0 0 0 / 10%);

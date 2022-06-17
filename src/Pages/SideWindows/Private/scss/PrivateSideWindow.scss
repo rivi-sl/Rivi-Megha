@@ -36,12 +36,13 @@
 }
 
 .tabTitle{
-    font-size: 0.9em;
-    font-weight: 600;
+    font-size: 0.85em;
+    font-weight: 700;
     margin-right: 10px;
     color: #22222294;
     cursor: pointer;
     position: relative;
+    text-transform: uppercase;
 }
 
 .tabTitle::after{
@@ -57,11 +58,12 @@
 
 .tabTitle_selected{
     color: #DE4B1E;
-    font-size: 0.9em;
-    font-weight: 600;
+    font-size: 0.85em;
+    font-weight: 700;
     margin-right: 10px;
     position: relative;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 .tabTitle_selected::after{

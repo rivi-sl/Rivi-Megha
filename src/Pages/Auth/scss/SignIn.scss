@@ -8,5 +8,50 @@
     background: rgba( 255, 255, 255, 0.25 );
     backdrop-filter: blur( 2px );
     -webkit-backdrop-filter: blur( 2px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    // border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: relative;
+    overflow: hidden;
 }
+
+.loadWrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center;
+}
+
+.hide{
+    display: none;
+}
+
+.loader {
+    width:50px;
+    height:50px;
+    display:inline-block;
+    padding:0px;
+    text-align:left;
+ }
+ .loader span {
+    position:absolute;
+    display:inline-block;
+    width:50px;
+    height:50px;
+    border-radius:100%;
+    background:rgba(235, 104, 63,1);
+    -webkit-animation:loader-anim  1.5s linear infinite;
+    animation:loader-anim  1.5s linear infinite;
+ }
+ .loader span:last-child {
+    animation-delay:-0.9s;
+    -webkit-animation-delay:-0.9s;
+ }
+ @keyframes loader-anim {
+    0% {transform: scale(0, 0);opacity:0.8;}
+    100% {transform: scale(1, 1);opacity:0;}
+ }
+ @-webkit-keyframes loader-anim  {
+    0% {-webkit-transform: scale(0, 0);opacity:0.8;}
+    100% {-webkit-transform: scale(1, 1);opacity:0;}
+ }
