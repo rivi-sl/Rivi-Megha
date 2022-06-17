@@ -128,7 +128,7 @@
     font-size:0.65em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #3E4445;
+    color: var(--secondaryText);
 }
 
 .bioTitle{
@@ -147,7 +147,7 @@
 .divider{
     width: 25px;
     height: 3px;
-    background-color: #3E4445;
+    background-color: var(--secondaryText);
     margin-bottom: 5px;
     transition: margin-left 0.1s ease-in-out 0.25s;
     position: relative;

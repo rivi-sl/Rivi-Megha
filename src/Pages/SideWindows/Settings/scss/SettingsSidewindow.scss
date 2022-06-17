@@ -1,0 +1,27 @@
+
+.title{
+    font-weight: 700;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+.theme{
+    display: flex;
+}
+.themeBtn{
+    font-weight: 600;
+    letter-spacing:1.25px;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: #DE4B1E;
+    background-color: transparent;
+    padding: 5px 7.5px;
+    border: 1.5px solid #DE4B1E;
+    border-radius: 0.25rem;
+    transition: 0.1s ease-in-out;
+    margin: 15px;
+}
+
+.themeBtn:hover{
+    color: #F4E8E0;
+    background-color: #DE4B1E;
+}
