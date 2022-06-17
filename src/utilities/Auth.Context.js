@@ -12,7 +12,7 @@ export const AuthProvider = ({children}) => {
 
     const [isLogged,setIsLogged] = useState(false)
     const [currentUser, setCurrentUser] = useState()
-    const [loading,setLoading] = useState(true)
+    const [loading,setLoading] = useState(false)
 
     const {riviToasteer} = useRivi()
 
@@ -38,6 +38,7 @@ export const AuthProvider = ({children}) => {
                         message:"Login Successful",
                     })
                     console.log(res.data)
+                    setLoading(false)
 				}else if(res.data.message === 'Invalid email'){
 					//make the err message
 					// alert('Invalid email')		
@@ -45,6 +46,7 @@ export const AuthProvider = ({children}) => {
                         type:"danger",
                         message:"User not found! Sign up if you don't gave an account.",
                     })
+                    setLoading(false)
 				}	
 				else if(res.data.message === 'Invalid password'){
 					//make the err message
@@ -53,12 +55,13 @@ export const AuthProvider = ({children}) => {
                         type:"danger",
                         message:"Wrong Password! Please try again.",
                     })
+                    setLoading(false)
 				}
 			})
 			.catch((err) => {
 				console.log("AXIOS ERROR: ", err);
+                setLoading(false)
 			})
-            setLoading(false)
     }
 
     const signup = (username,email,password,mobile) => {

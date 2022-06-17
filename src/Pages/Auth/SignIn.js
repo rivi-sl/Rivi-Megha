@@ -1,9 +1,12 @@
 import * as styles from "./scss/All.module.scss";
 import { useNavigate } from "react-router-dom";
 import SignInForm from "../../Components/Forms/SignIn/SignInForm";
+import { useAuth } from "../../utilities/Auth.Context";
 
 const SignIn = () => {
 	const navigate = useNavigate();
+
+	const {loading} = useAuth()
 
 	return (
 		<div className={styles.authBody}>
@@ -27,6 +30,12 @@ const SignIn = () => {
 				</section>
 
 				<section className={styles.signIn}>
+					<div className={`${styles.loadWrapper} ${loading ? null : styles.hide}`}>
+						<div className={styles.loader}>
+    						<span></span>
+    						<span></span>
+						</div>
+					</div>
 					<SignInForm />
 				</section>
 
