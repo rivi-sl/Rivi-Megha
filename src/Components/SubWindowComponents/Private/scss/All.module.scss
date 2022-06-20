@@ -16,7 +16,6 @@
     width: 95%;
     height: 15%;
     min-height: 70px;
-    background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -31,7 +30,7 @@
     height: 15%;
     min-height: 70px;
     display: flex;
-    background-color: #e8e8e8;
+    background-color: var(--contactSelected);
     flex-direction: column;
     overflow: hidden;
     cursor: pointer;
@@ -83,20 +82,20 @@
 }
 
 .contactName{
-    color: #3E4445;
+    color: var(--chatList);
     font-weight: 600;
     font-size: 0.85em;
 }
 
 .contactSMS{
     margin-top: -0.2rem;
-    color: #3E4445;
+    color: var(--chatList);
     font-weight: 300;
     font-size: 0.75em;
 }
 
 .timeStamp{
-    color: #3E4445;
+    color: var(--chatList);
     font-weight: 400;
     font-size: 0.7em;
     align-self: flex-start;
@@ -149,7 +148,7 @@
         height: 15%;
         min-height: 70px;
         display: flex;
-        background-color: #e8e8e8;
+        background-color: var(--contactSelected);
         flex-direction: column;
         overflow: hidden;
         cursor: pointer;  

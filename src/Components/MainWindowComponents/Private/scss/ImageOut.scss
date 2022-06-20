@@ -6,7 +6,7 @@
     width: fit-content;
     padding: 5px 5px;
     margin-bottom: 10px;
-    background-color: #ffbe7b;
+    background-color: var(--chatOut);
     border-radius: 0.75em 0 0.75em 0.75em;
     display: flex;
     flex-direction: column;
@@ -16,8 +16,8 @@
     content: '';
     position: absolute;
     border: .5em solid transparent;
-    border-top-color: #ffbe7b;
-    border-left-color: #ffbe7b;
+    border-top-color: var(--chatOut);
+    border-left-color: var(--chatOut);
     left: 100%;
     top: 0%;
 }

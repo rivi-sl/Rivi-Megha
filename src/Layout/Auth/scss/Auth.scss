@@ -11,6 +11,7 @@
 	background-image: url("../../../Images/BackDrawingOriginal-withbg.png");
 }
 
+
 // .background{
 //   svg {
 //     // width: 300px;
@@ -54,7 +55,7 @@
 .authWindow {
 	flex: 1;
 	height: 100%;
-	background-color: #f8f8f8;
+	background-color: var(--Appbody);
 	border-radius: 1em;
 	overflow: hidden;
 	position: relative;

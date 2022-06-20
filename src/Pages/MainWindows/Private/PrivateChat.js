@@ -44,7 +44,7 @@ const PrivateChat = () => {
             <div className={styles.chatWindowPanel} id="chatWindowPanel">
                 <div className={styles.header} >
                     <span className={styles.back} onClick={()=>{ToggleWindow()}}>
-                        <Rivicon i='ReturnIcon' s='30' mt={0} nav={false} selected={false} style={{cursor: 'pointer'}} />
+                        <Rivicon i='ReturnIcon' s='35' mt={0} nav={false} selected={false} style={{cursor: 'pointer'}} />
                     </span>
                     <Header profilePic={selectedPrivateChat.profilePic} name={selectedPrivateChat.name} online={selectedPrivateChat.online} about={selectedPrivateChat.about} />
                 </div>

@@ -36,7 +36,7 @@ const PrivateSideWindow = () => {
         // console.log(ContactDataReciever())
     },[setPrivateContactList])
     return (
-        <Fragment>
+        <>
             <span className={styles.title}>Private Messages</span>
             <div className={styles.searchBox}>
                  <Rivicon i='SearchbarIcon' s='22' mt={0} nav={false} selected={false} /> 
@@ -54,7 +54,7 @@ const PrivateSideWindow = () => {
             <div className={styles.newChatButton}>
                 <Rivicon i='NewChatStyleIcon' s='22' mt={0} nav={false} selected={false} /> 
             </div>
-        </Fragment>
+        </>
     )
 }
 

@@ -33,11 +33,13 @@ import {ReactComponent as NewChatStyle} from './Icons/NewChatStyle.svg'
 
 
 
-const IconExplorer = (s,i,style) =>{
+const IconExplorer = (s,i,style,clr) =>{
     const stylings = {
         width: s,
         height: s
     }
+
+    
     const IconLibrary = {
         ProfileIcon: <img src={Profile} style={style?style:null} width={s} alt='Rivicon-Profile' />,
         PrivateIcon: <img src={Private} style={style?style:null} width={s} alt='Rivicon-Private' />,

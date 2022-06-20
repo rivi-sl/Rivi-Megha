@@ -53,7 +53,9 @@ const Navigation = () => {
             </section>
             <section className={styles.settings}>
                 <span onClick={()=>{triggerWindow('setting')}}>
+                <Link to="/settings">
                 <Rivicon i='SettingsStyleIcon' s='32' mt={0} selected={window==='setting' ? true : false} nav={true} />
+                </Link>
                 </span>
             </section>
 
