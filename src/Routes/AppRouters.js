@@ -24,6 +24,7 @@ const AppRouters = () => {
         <Route path = "/sign_in" element={<AuthLayout page={<SignIn/>} />} />
         <Route path = "/sign_up" element={<AuthLayout page={<SignUp/>} />} />
         <Route path = "*" element={<Navigate to="/sign_in"/>} />
+        {/* <Route path = "/?showtranslations" /> */}
     </Routes>
     </>
   )

@@ -23,7 +23,7 @@ const SettingsSideWindow = () => {
 
 	return (
 		<>
-			<span className={styles.title}>{t('Settings')}</span>
+			<span className={styles.title}>{t('Settings.Settings')}</span>
 			<span>Theme</span>
 			<div className={styles.theme}>				
 				<button className={styles.themeBtn} onClick={toggleTheme}>
@@ -31,6 +31,7 @@ const SettingsSideWindow = () => {
 				</button>
 				{/* <button className={styles.themeBtn} onClick={setTheme(themes.dark)}>Dark Theme</button> */}
 			</div>
+
       <span>Language</span>
       <div className={styles.theme}>				
         <button className={styles.themeBtn} onClick={() => changeLang("si")}>සිංහල</button>
