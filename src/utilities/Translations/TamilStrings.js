@@ -2,6 +2,7 @@
 const TaStrings = {
     "Settings":{
         "Settings": "அமைப்புகள்",
+        "Theme": "தீம்"
     }
 };
 
