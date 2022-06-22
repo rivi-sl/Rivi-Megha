@@ -2,14 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;500;700&family=Noto+Sans+Tamil:wght@300;500;600&family=Poppins:ital,wght@1,100&family=Yaldevi:wght@300;500;600&display=swap');
 
 *{
   box-sizing: border-box;
-  font-family: 'Poppins';
-  /* font-family: 'Archivo', sans-serif; */
-  /* font-family: 'DM Sans', sans-serif; */
+  // font-family: var(--font1);
+  font-family: 'Poppins', sans-serif;
+  // font-family: 'Noto Sans Tamil', sans-serif;
+  // font-family: 'Archivo', sans-serif;
+  // font-family: 'DM Sans', sans-serif;
   /* overflow: hidden; */
 }
+
+.font-si{
+  font-family: 'Yaldevi', sans-serif;
+}
+
+.font-ta{
+  font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+.font-en{
+  font-family: 'Poppings', sans-serif;
+}
+
 
 html,body,#root{
   width: 100%;
