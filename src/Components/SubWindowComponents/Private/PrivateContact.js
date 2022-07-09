@@ -1,11 +1,13 @@
-import React from 'react'
+import {React} from 'react'
 import * as styles from './scss/All.module.scss'
 
 const PrivateContact = (props) => {
     const {selected,name,profile,timeStamp,lastSMS,online,unread} = props
+   
     return (
         <div className={styles.contactShortInfo}>
             <img src={profile} alt="profilepic" className={online ? styles.contactProfilePicture_online : styles.contactProfilePicture} />
+            
             <div className={styles.contactNameandSMS}>
                 <span className={styles.contactName}>{name}</span>
                 <span className={styles.contactSMS}>{lastSMS}</span>
