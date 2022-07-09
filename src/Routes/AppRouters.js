@@ -9,6 +9,8 @@ import SignIn from '../Pages/Auth/SignIn'
 import SignUp from '../Pages/Auth/SignUp'
 import { useRivi } from '../Rivi.Context'
 import SettingsSideWindow from '../Pages/SideWindows/Settings/SettingsSideWindow'
+import SideWindowSkeleton from '../utilities/skeletons/SideWindowSkeleton'
+import MainWindowSkeleton from '../utilities/skeletons/MainWindowSkeleton'
 
 const AppRouters = () => {
 
@@ -18,6 +20,8 @@ const AppRouters = () => {
     <>
     <RiviToast />
     <Routes>
+        <Route path={"/loading"} element={<Layout subWindow={<SideWindowSkeleton />} mainWindow={<MainWindowSkeleton/>} />} />
+
         <Route path={"/profile"} element={<Layout subWindow={<ProfileSideWindow />} mainWindow={null} />} />
         <Route path={"/private/*"} element={<Layout subWindow={<PrivateSideWindow />} mainWindow={<PrivateChat />} />} />
         <Route path={"/settings"} element={<Layout subWindow={<SettingsSideWindow />} mainWindow={null} />} />
