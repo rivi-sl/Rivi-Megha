@@ -12,7 +12,7 @@ const SignInForm = () => {
 	const [password,setPassword] = React.useState('')
 	const [response,setResponse] = React.useState('')
 
-	const {login} = useAuth()
+	const {login, tempFakeLogin} = useAuth()
 
 	function handleChangeEmail(event){
 		setEmail(event.target.value)
@@ -74,6 +74,15 @@ const SignInForm = () => {
 					onClick={(e) => {
 						// setislogged(true);
 						onSubmit(e);
+					}}
+				/>
+				<input
+					type="submit"
+					value="Pwease don't cwick me"
+					className={styles.loginBtn}
+					onClick={(e) => {
+						// setislogged(true);
+						tempFakeLogin();
 					}}
 				/>
 			</form>

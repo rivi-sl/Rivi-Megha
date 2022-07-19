@@ -151,9 +151,19 @@ export const AuthProvider = ({children}) => {
         // }
     }, [isLogged]);
 
+    const tempFakeLogin = () => {
+        setLoading(true)
+        setCurrentUser({
+            username: "Gotabaya Rajapksha"
+        })
+        setIsLogged(true)
+        setLoading(false)
+    }
+
     const value = {
         loading,
         currentUser,
+        tempFakeLogin,
         setLoading,
         login,
         signup,
