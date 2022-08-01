@@ -28,7 +28,7 @@ export const ProfileInfo = (props) => {
                                 setImageUrl(photo.imageId)
                             }}
                             style={{backgroundImage:`url('${photo.photoLink}')`}}
-                            data-id={photo.imageId}
+                            id={photo.imageId}
                         >
                             <div className={styles.openPhotoIcon}>
                             <Rivicon i='CameraIcon' s='22' mt={0} nav={false} pl={10} pr={10} selected={false} style={{opacity:0.5,filter:'blur(0.5px)'}} />

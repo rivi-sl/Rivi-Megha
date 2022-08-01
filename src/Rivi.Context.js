@@ -1,6 +1,7 @@
-import { useContext, useState ,createContext } from 'react'
+import { useContext, useState ,createContext ,useEffect} from 'react'
+import Fonts from "./utilities/Translations/Fonts";
 import riviUserData from  './userData'
-
+import { useTranslation } from "react-i18next";
 import "./utilities/utilityStyles/Toast.scss"
 
 const RiviContext = createContext()
@@ -11,11 +12,19 @@ export const useRivi = () => {
 }
 
 export const RiviProvider = ({children}) => {
+    const { i18n } = useTranslation();
+
     const [state,setState] = useState('PRIVATE')
     const [selectedPrivateChat,setSelectedPrivateChat] = useState(null)
     const [userData,setUserData] = useState(riviUserData)
     const [privateContactList,setPrivateContactList] = useState([])
     const [islogged,setislogged] = useState(false)
+    const [Lang,changeLang] = useState("en")
+
+    useEffect(() => {
+        i18n.changeLanguage(Lang);
+		document.documentElement.style.setProperty('--font', Fonts[Lang]);
+    },[Lang]);
 
     const getToastType = (type) => {
         switch (type) {
@@ -53,11 +62,13 @@ export const RiviProvider = ({children}) => {
         userData,
         privateContactList,
         islogged,
+        Lang,
         setState,
         setSelectedPrivateChat,
         setUserData,
         setPrivateContactList,
         setislogged,
+        changeLang,
         RiviToast,
         riviToasteer
     }
