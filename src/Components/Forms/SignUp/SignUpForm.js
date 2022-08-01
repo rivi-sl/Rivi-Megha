@@ -1,6 +1,6 @@
 import * as styles from "./scss/All.module.scss";
 import Rivicon from "../../Icons/Rivicon";
-import { useContext } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { useRivi } from "../../../Rivi.Context";
 import React from 'react'
 import axios from 'axios'
@@ -14,13 +14,15 @@ const SignUpForm = () => {
     const [username,setUsername] = React.useState('')
     const [password,setPassword] = React.useState('')
     const [mobile,setMobile] = React.useState('')
+    const [image,setImage] = React.useState('')
+
 
     const {signup} = useAuth()
 
     async function handleSubmit(event){
         event.preventDefault()
         try{
-            signup(username,email,password,mobile)
+            signup(username,email,password,mobile,image)
             setislogged(true)
         }catch(err){
             console.log(err)
@@ -43,6 +45,12 @@ const SignUpForm = () => {
         setMobile(event.target.value)
     }
 
+    function handleChangeImage(event){
+        if(event.target.files[0]){
+        setImage(event.target.files[0].name)
+        }
+    }
+
 	return (
 		<div className={styles.form}>
 			<span className={styles.title}>Create New Account</span>
@@ -54,9 +62,11 @@ const SignUpForm = () => {
                     <input type="password" name="password" placeholder="Password" className={styles.inputPassword} onChange={(e)=>handleChangePassword(e)}/>
                 </div>
 				<div className={styles.formRight}>
-                    <div className={styles.imageArea}>
-                        Drag or click to upload user image.
-                    </div>
+                <div className={styles.imageArea}>
+                        {image ? (<React.Fragment>Uploaded: <div>{image}</div></React.Fragment>)  : "Drag or click to upload a profile image"}
+                        <input type="file" className={styles.inputImage} name="image" accept="image/png, image/jpeg" onChange={(e)=>handleChangeImage(e)} />
+                </div>              
+                    
                     {/* <input type="button" name="userimage" value="User Image" className={styles.inputUserImage} /> */}
                 </div>                
 				<div className={styles.formBottom}>
