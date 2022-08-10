@@ -33,7 +33,7 @@ export const AuthProvider = ({children}) => {
 			password
 		} 
 
-		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signin', reqObject, axiosConfig)
+		axios.post('http://localhost:8080/api/v1/user/signin', reqObject, axiosConfig)
 			.then((res) => {
 				if(res.data.success === true){
                     setToken(res.data.token)
@@ -84,17 +84,17 @@ export const AuthProvider = ({children}) => {
 			})
     }
 
-    const signup = (username,email,password,mobile) => {
-        const reqObj = {
-            username,
-            email,
-            password,
-            mobile
-        }
+    const signup = (username,email,password,mobile,image) => {
+        var reqObj = new FormData()
+        reqObj.append('username',username)
+        reqObj.append('email',email)
+        reqObj.append('password',password)
+        reqObj.append('mobile',mobile)
+        reqObj.append('profilePic',image)
 
         let axiosConfig = {
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'multipart/form-data'
 			}
 		};
 
