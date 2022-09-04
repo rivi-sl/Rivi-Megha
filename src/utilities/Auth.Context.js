@@ -33,7 +33,7 @@ export const AuthProvider = ({children}) => {
 			password
 		} 
 
-		axios.post('http://localhost:8080/api/v1/user/signin', reqObject, axiosConfig)
+		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signin', reqObject, axiosConfig)
 			.then((res) => {
 				if(res.data.success === true){
                     setToken(res.data.token)
