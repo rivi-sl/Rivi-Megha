@@ -84,17 +84,17 @@ export const AuthProvider = ({children}) => {
 			})
     }
 
-    const signup = (username,email,password,mobile) => {
-        const reqObj = {
-            username,
-            email,
-            password,
-            mobile
-        }
+    const signup = (username,email,password,mobile,image) => {
+        var reqObj = new FormData()
+        reqObj.append('username',username)
+        reqObj.append('email',email)
+        reqObj.append('password',password)
+        reqObj.append('mobile',mobile)
+        reqObj.append('profilePic',image)
 
         let axiosConfig = {
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'multipart/form-data'
 			}
 		};
 
@@ -102,9 +102,15 @@ export const AuthProvider = ({children}) => {
 		axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/signup', reqObj, axiosConfig)
 			.then((res) => {
 				if(res.data.success === false){
-                    alert(res.data.message)
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
                 }else{
-                    alert(res.data.message)
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
                 }
 			})
 			.catch((err) => {
@@ -112,6 +118,224 @@ export const AuthProvider = ({children}) => {
 			})
         
         
+    }
+
+    const verifyEmail = (email)=>{
+        const reqObj = {
+            email
+        }
+        axios.post('https://rivi-test-backend.herokuapp.com/api/v1/user/verify/email', reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const verify = (token)=>{
+        axios.post(`https://rivi-test-backend.herokuapp.com/api/v1/user/verify/${token}`, reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const resetEmail = (email, host)=>{
+        const reqObj = {
+            email,
+            host
+        }
+        axios.post(`https://rivi-test-backend.herokuapp.com/api/v1/user/reset/email`, reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const updatePassword = (token,password1,password2)=>{
+        const reqObj = {
+            password1,
+            password2
+        }
+        axios.put(`https://rivi-test-backend.herokuapp.com/api/v1/user/reset/${token}`, reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const getProfile = (token)=>{
+        axios.get(`https://rivi-test-backend.herokuapp.com/api/v1/user/profile?token=${token}`, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const getUserProfile = (token,id)=>{
+        axios.get(`https://rivi-test-backend.herokuapp.com/api/v1/user/profile/${id}?token=${token}`, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const updateProfile = (token,user)=>{
+        const reqObj = user
+        axios.put(`https://rivi-test-backend.herokuapp.com/api/v1/user/profile?token=${token}`,reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const getChats = (token)=>{
+        axios.get(`https://rivi-test-backend.herokuapp.com/api/v1/user/chats?token=${token}`, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const getChatById = (token,id)=>{
+        axios.get(`https://rivi-test-backend.herokuapp.com/api/v1/user/chats/${id}?token=${token}`, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
+    }
+
+    const report = (token,by,to,title,description)=>{
+        const reqObj = {
+            by,
+            to,
+            title,
+            description,
+        }
+        axios.post(`https://rivi-test-backend.herokuapp.com/api/v1/user/report?token=${token}`,reqObj, axiosConfig)
+			.then((res) => {
+				if(res.data.success === false){
+                    riviToasteer({
+                        type:"danger",
+                        message:res.data.message,
+                    })
+                }else{
+                    riviToasteer({
+                        type:"success",
+                        message:res.data.message,
+                    })
+                }
+			})
+			.catch((err) => {
+				console.log("AXIOS ERROR: ", err);
+			})
     }
 
     const logout = () => {
@@ -167,7 +391,17 @@ export const AuthProvider = ({children}) => {
         setLoading,
         login,
         signup,
-        logout
+        logout,
+        verifyEmail,
+        verify,
+        resetEmail,
+        updatePassword,
+        getProfile,
+        getUserProfile,
+        updateProfile,
+        getChats,
+        getChatById,
+        report
     } 
 
     return (

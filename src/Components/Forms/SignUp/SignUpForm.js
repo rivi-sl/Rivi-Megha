@@ -47,7 +47,7 @@ const SignUpForm = () => {
 
     function handleChangeImage(event){
         if(event.target.files[0]){
-        setImage(event.target.files[0].name)
+            setImage(event.target.files[0])
         }
     }
 
@@ -63,7 +63,7 @@ const SignUpForm = () => {
                 </div>
 				<div className={styles.formRight}>
                 <div className={styles.imageArea}>
-                        {image ? (<React.Fragment>Uploaded: <div>{image}</div></React.Fragment>)  : "Drag or click to upload a profile image"}
+                        {image ? (<React.Fragment>Uploaded: <div>{image.name}</div></React.Fragment>)  : "Drag or click to upload a profile image"}
                         <input type="file" className={styles.inputImage} name="image" accept="image/png, image/jpeg" onChange={(e)=>handleChangeImage(e)} />
                 </div>              
                     
