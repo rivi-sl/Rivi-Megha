@@ -1,6 +1,7 @@
 const EnStrings = {
     "Settings":{
         "Settings": "Settings",
+        "Theme": "Theme"
     }
 };
 

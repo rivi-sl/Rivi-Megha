@@ -20,7 +20,7 @@ const SettingsSideWindow = () => {
 	return (
 		<>
 			<span className={styles.title}>{t('Settings.Settings')}</span>
-			<span>Theme</span>
+			<span>{t('Settings.Theme')}</span>
 			<div className={styles.theme}>				
 				<button className={styles.themeBtn} onClick={toggleTheme}>
 					change Theme
